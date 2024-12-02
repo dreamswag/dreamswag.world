@@ -8,6 +8,7 @@
 	body
 	{
 		font-family: Verdana, arial, sans-serif;
+		overflow: hidden;
 	}
 	
 	h1
@@ -54,10 +55,49 @@
 		border-style: solid;
 		overflow: hidden;
 	}
+	#footer	{
+		position:absolute;
+		bottom:0;
+		width:120%;
+		height:40px;
+		left: 2px;
+	}
+	#header	{
+		bottom:40;
+		width:120%;
+		height:0px;
+		left: 2px;
+	}
+	
 	
 	</style>
 </head>
-
+<div id="header">
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "description": "",
+      "proName": "NYSE:GME"
+    },
+    {
+      "description": "",
+      "proName": "AMEX:SPY"
+    },
+    {
+      "description": "",
+      "proName": "PEPPERSTONE:VIX"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": true,
+  "displayMode": "adaptive",
+  "colorTheme": "light",
+  "locale": "en"
+}
+  </script>
+</div>
+<br><br>
 <center>
 	<h1>You Just Lost <span style="color:firebrick">The Game!</span></h1>
 	
@@ -73,9 +113,37 @@
 	<p>
 		<a href="https://www.drsgme.org/" target="_blank">The objective of The Game is to forget that it exists.</a>
 	</p>
-	<br>
+	<br><br>
 	<video width="675" height="380" poster="findme.png" controls autoplay loop playsinline src="comedy.mp4"></video>
 	<br><br><br>
+	<div id="footer">
+	<div class="tradingview-widget-container">
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "description": "",
+      "proName": "NYSE:GME"
+    },
+    {
+      "description": "",
+      "proName": "AMEX:SPY"
+    },
+    {
+      "description": "",
+      "proName": "PEPPERSTONE:VIX"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": true,
+  "displayMode": "adaptive",
+  "colorTheme": "light",
+  "locale": "en"
+}
+  </script>
+</div>
+</div>
+	
 	</center>
 </body>
 </html>
