@@ -54,6 +54,13 @@
 		border-style: solid;
 		overflow: hidden;
 	}
+	tradingview-widget-container
+	{
+		position: absolute;
+		width: 100%;
+		overflow: hidden;
+	}
+	
 	
 	</style>
 </head>
@@ -75,6 +82,39 @@
 	</p>
 	<br>
 	<video width="675" height="380" poster="findme.png" controls autoplay loop playsinline src="comedy.mp4"></video>
+	<br><br>
+	
+	
+	
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "description": "",
+      "proName": "NYSE:GME"
+
+    },
+    {
+      "description": "",
+      "proName": "AMEX:SPY"
+    },
+    {
+      "description": "",
+      "proName": "PEPPERSTONE:VIX"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": true,
+  "displayMode": "regular",
+  "colorTheme": "dark",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
 	</center>
 </body>
 </html>
