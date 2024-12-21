@@ -245,4 +245,20 @@
 </center>
 	
 </body>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var titles = ['Power to the Collectors 🏴‍☠️', 'Power to the Creators 🏴‍☠️', 'Power to the Players 🏴‍☠️'];
+    var currentIndex = 0;
+    var intervalDuration = 2222;
+  
+    function changeTitle() {
+      document.title = titles[currentIndex];
+      currentIndex = (currentIndex + 1) % titles.length;
+    }
+  
+    changeTitle();
+  
+    setInterval(changeTitle, intervalDuration);
+  });
+</script>
 </html>
