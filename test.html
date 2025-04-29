@@ -125,12 +125,13 @@
 	#footer {
 		position: fixed;
 		bottom: 0;
-		width: 100%;
-		height: auto;
-		padding: 10px 0;
 		left: 0;
-		overflow: visible; /* Ensure content isn’t clipped */
-		min-height: 100px; /* Set a minimum height to accommodate the widget */
+		width: 100%;
+		height: auto; /* Let the height adjust to the content */
+		padding: 0; /* Remove any padding */
+		margin: 0; /* Remove any margin */
+		box-sizing: border-box; /* Ensure padding is included in height calculation */
+		overflow: hidden; /* Prevent any overflow that might cause a gap */
 	}
 	.tradingview-widget-container {
 		width: 100%;
@@ -205,12 +206,16 @@
 			margin-right: auto;
 		}
 	}
-	@media (max-width: 768px) {
-		.tradingview-widget-container iframe {
-			width: 100% !important;
-			height: auto !important;
-			display: block; /* Ensure proper rendering */
-		}
+	.tradingview-widget-container {
+		margin: 0;
+		padding: 0;
+		height: 100%; /* Ensure it takes the full height of the footer */
+	}
+	.tradingview-widget-container iframe,
+	.tradingview-widget-container div {
+		margin: 0 !important;
+		padding: 0 !important;
+		border: none !important;
 	}
 }
 }
