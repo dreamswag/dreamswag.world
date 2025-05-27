@@ -20,10 +20,10 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<style type="text/css">
-	/* ————————————————————————————————————————————————————————————————————
-	   CORE STYLES (desktop view ≥1024px) – NO CHANGES
-	   ———————————————————————————————————————————————————————————————————— */
-	body {
+	
+	
+	body
+	{
 		font-family: Verdana, arial, sans-serif;
 		color: white;
 		max-width: 100%;
@@ -37,25 +37,31 @@
 		background-blend-mode: lighten;
 		opacity:1;
 	}
-	h1 {
+	
+	h1
+	{
 		font-size: 74.1px;
 		text-align: center;
 		font-family: "Trebuchet MS", sans-serif;
 		text-shadow: 4px 4px #000000;
 		line-height: .69;
+		
 	}
-	h2 {
+	h2
+	{
 		font-size: 44px;
 		text-align: center;
 		font-family: "Trebuchet MS", sans-serif;
 		text-shadow: 3px 3px #000000;
 		line-height: .69;
+		
 	}
-	p {
+	p
+	{	
 		background-color: rgba(22, 22, 22, 0.69);
 		border-width: 5px 5px 5px 6px;
 		padding: .42vw;
-		border-radius: 22px;
+		border-radius: 22px 22px 22px 22px;
 		border-color: rgba(0, 0, 0, 1);
 		border-style: solid;
 		opacity:0.9;
@@ -65,7 +71,8 @@
 		text-shadow: 2px 2px #140101;
 		white-space: normal;
 	}
-	p2 {
+	p2
+	{	
 		line-height:33px;
 		color: rgba(174,174,174, 0.69);
 		font-size: 14.7px;
@@ -75,23 +82,39 @@
 		opacity: 0.22;
 		left: 222px;
 	}
-	a:link, a:visited {
+	a:link 
+	{
 		color: white;
 		background-color: transparent;
 		text-decoration: none;
 	}
-	a:hover, a:active {
+	a:visited 
+	{
+		color: white;
+		background-color: transparent;
+		text-decoration: none;
+	}
+	a:hover 
+	{
 		color: darkmagenta;
 		background-color: transparent;
 		text-decoration: none;
 		font-weight: bold;
 	}
-	video {
+	a:active 
+	{
+		color: darkmagenta;
+		background-color: transparent;
+		text-decoration: none;
+		font-weight: bold;
+	}
+	video
+	{
 		max-width: 100%;
 		height: auto;
 		background-color: rgba(0, 0, 0, .9);
 		margin-top: -1px;
-		border-width: 0.42vw;
+		border-width: 0.42vw 0.42vw 0.42vw 0.42vw;
 		box-shadow: 0px 0px 44px 22px rgba(0, 0, 0, 0.7);
 		padding: 0px;
 		border-radius: 4px;
@@ -104,102 +127,122 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		height: auto;
-		box-sizing: border-box;
-		overflow: hidden;
+		height: auto; /* Let the height adjust to the content */
+		box-sizing: border-box; /* Ensure padding is included in height calculation */
+		overflow: hidden; /* Prevent any overflow that might cause a gap */
 	}
 	.tradingview-widget-container {
 		width: 100%;
-		height: 100%;
-		margin: 0;
-		padding: 0;
+		height: 100%; /* Let the container match the widget’s height */
 	}
-	.widget-container {
-      /* Tablet/Desktop ticker scaling left intact */
-      transform: scale(0.6);
-      transform-origin: top left;
-      width: 166.67%;
-      height: 166.67%;
-      overflow: hidden;
-    }
-	#header {
-		position: fixed;
+	#header	{
+		position:fixed;
 		top:0;
 		width:100%;
 		left:0;
 	}
-	#main {
+	#main{
 		position: fixed;
 		top: 45.5%;
 		left: 50.7%;
+		-webkit-transform: translate(-50%, -50%);
 		transform: translate(-50%, -50%);
 		white-space: nowrap;
-	}
-	html, body {
+	}​
+	html, body{
 		overflow: hidden;
 		height: 100%;
 		margin: 0;
 		padding: 0;
 	}
-
-	/* ————————————————————————————————————————————————————————————————————
-	   TABLET STYLES (max-width: 768px) – leave as‐is if you wish
-	   (we haven’t touched these; they don’t affect ≤480px)
-	   ———————————————————————————————————————————————————————————————————— */
+	
 	@media (max-width: 768px) {
-		h1 { font-size: 24px; }
-		h2 { font-size: 16px; }
-		p  { font-size: 9px; }
+    h1 {
+        font-size: 24px; /* Reduced from 24px */
+    }
+    h2 {
+        font-size: 16px; /* Reduced from 18px */
+    }
+    p {
+        font-size: 9px; /* Reduced from 12px */
+    }
+    video {
+        width: 90%; /* Slightly less than 100% for better spacing */
+        height: auto;
+        margin: 0 auto; /* Center the video */
+    }
+	
+	@media (max-width: 480px) {
+		h1 {
+			font-size: 18px;
+		}
+		h2 {
+			font-size: 14px;
+		}
+		p {
+			font-size: 9px;
+		}
+	}
+	
+	@media (orientation: landscape) {
+		body {
+			overflow-x: hidden; /* Prevent horizontal scrolling */
+		}
+		#main {
+			top: 20%; /* Adjusted from 30% for better positioning */
+			width: 100%; /* Ensure it spans the full width */
+			margin: 0; /* Remove any default margins */
+		}
 		video {
-			width: 90%;
+			width: 70%; /* Reduced from 80% to fit better */
 			height: auto;
 			margin: 0 auto;
 		}
-	}
-
-	/* ————————————————————————————————————————————————————————————————————
-	   MOBILE STYLES (max-width: 480px)
-	   Scales every dimension with vw so it’s a miniaturized
-	   but proportionally-identical version of the desktop view.
-	   ———————————————————————————————————————————————————————————————————— */
-	@media (max-width: 480px) {
-		#main {
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			padding: 0 2vw;  /* small gutter left/right */
-			white-space: normal;
-		}
-		h1 {
-			font-size: 8vw;  /* 8% of viewport width */
-			line-height: 1;
-		}
-		h2 {
-			font-size: 5vw;
-			line-height: 1;
-		}
-		p {
-			font-size: 3vw;
-			padding: 2vw;
-			border-width: .8vw;
-			border-radius: 3vw;
-			letter-spacing: .5vw;
-			line-height: 4vw;
-		}
-		video {
-			width: 90vw;  /* shrink video equally */
-			height: auto;
-			margin-top: 2vw;
-		}
-		/* shrink the ticker even more on mobile */
-		.widget-container {
-			transform: scale(0.4);
-			transform-origin: top left;
-			width: 250%;
-			height: 250%;
+		h1, h2, p {
+			max-width: 90%; /* Prevent text from stretching too wide */
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
-	/* ———————————————————————————————————————————————————————————————————— */
+	.tradingview-widget-container {
+		margin: 0;
+		padding: 0;
+		height: 100%; /* Ensure it takes the full height of the footer */
+	}
+	.tradingview-widget-container iframe,
+	.tradingview-widget-container div {
+		margin: 0 !important;
+		padding: 0 !important;
+		border: none !important;
+	}
+	.widget-container {
+      transform: scale(0.6);  /* Scale down to 80% by default */
+      transform-origin: top left;  /* Scale from top-left corner */
+      width: 166.67%;  /* Compensate for scaling (100% / 0.8) */
+      height: 166.67%;
+      overflow: hidden;  /* Prevent overflow */
+    }
+	@media (max-width: 768px) {
+      .widget-container {
+        transform: scale(0.5);  /* Scale to 60% for smaller screens */
+        width: 200%;  /* 100% / 0.6 */
+        height: 200%;
+      }
+    }
+	@media (min-width: 769px) {
+      .widget-container {
+        transform: scale(0.7);  /* Scale to 80% for larger screens */
+        width: 142.86%;
+        height: 142.86%;
+      }
+    }
+	#footer * {
+	  margin: 0;
+	  padding: 0;
+	}
+}
+}
+	
 	</style>
 </head>
 <body>
@@ -209,19 +252,37 @@
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
 		{
 		"symbols": [
-		  { "description": "GameStop", "proName": "NYSE:GME" },
-		  { "description": "S&P 500", "proName": "AMEX:SPY" },
-		  { "description": "US Volatility Index", "proName": "PEPPERSTONE:VIX" },
-		  { "description": "Ethereum", "proName": "COINBASE:ETHUSD" },
-		  { "description": "Loopring", "proName": "COINBASE:LRCUSD" },
-		  { "description": "Immutable", "proName": "COINBASE:IMXUSD" }
-		],
-		"showSymbolLogo": true,
-		"isTransparent": true,
-		"displayMode": "regular",
-		"colorTheme": "dark",
-		"locale": "en",
-		"autosize": true
+		{
+		  "description": "GameStop",
+		  "proName": "NYSE:GME"
+		},
+		{
+		  "description": "S&P 500",
+		  "proName": "AMEX:SPY"
+		},
+		{
+		  "description": "US Volatility Index",
+		  "proName": "PEPPERSTONE:VIX"
+		},
+		{
+		  "description": "Ethereum",
+		  "proName": "COINBASE:ETHUSD"
+		},
+		{
+		  "description": "Loopring",
+		  "proName": "COINBASE:LRCUSD"
+		},
+		{
+		  "description": "Immutable",
+		  "proName": "COINBASE:IMXUSD"
+		}
+		  ],
+			"showSymbolLogo": true,
+			"isTransparent": true,
+			"displayMode": "regular",
+			"colorTheme": "dark",
+			"locale": "en",
+			"autosize": true
 		}
       </script>
     </div>
@@ -231,9 +292,9 @@
 		<br><h1>You Just Lost <span style="color:firebrick">The Game!</span></h1>
 		
 		<p>
-			<b><span style="color:white">RULE 1</span></b>: <a href="https://www.reddit.com/r/Superstonk/comments/1beyh96/x_marks_the_spot_gamestop_playr_x_xbox_game_pass/" target="_blank">You are playing The Game.</a><br>
-			<b><span style="color:white">RULE 2</span></b>: <a href="https://www.reddit.com/r/Superstonk/comments/148sqku/why_gamestop_is_primed_to_become_the_amazon_x/" target="_blank">Whenever you think about The Game, you lose.</a><br>
-			<b><span style="color:white">RULE 3</span></b>: <a href="https://www.reddit.com/r/loopringorg/comments/1b36wxm/loopring_a_dormant_quintessential_paypal_superapp/" target="_blank">Loss must be announced.</a><br>
+			<b><span style="color:white, font-family:Verdana,arial, sans-serif">RULE 1</span></b>:	<a href ="https://www.reddit.com/r/Superstonk/comments/1beyh96/x_marks_the_spot_gamestop_playr_x_xbox_game_pass/" target="_blank">You are playing The Game.</a> <br />
+			<b><span style="color:white, font-family:Verdana,arial, sans-serif">RULE 2</span></b>:	<a href ="https://www.reddit.com/r/Superstonk/comments/148sqku/why_gamestop_is_primed_to_become_the_amazon_x/" target="_blank">Whenever you think about The Game, you lose.</span></a> <br />
+			<b><span style="color:white, font-family:Verdana,arial, sans-serif">RULE 3</span></b>:	<a href ="https://www.reddit.com/r/loopringorg/comments/1b36wxm/loopring_a_dormant_quintessential_paypal_superapp/"target="_blank">Loss must be announced.</span></a> <br />
 		</p>
 		
 		<br>
@@ -256,19 +317,37 @@
 			  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
 				{
 				"symbols": [
-				  { "description": "Ethereum",      "proName": "COINBASE:ETHUSD" },
-				  { "description": "Loopring",       "proName": "COINBASE:LRCUSD" },
-				  { "description": "Immutable",      "proName": "COINBASE:IMXUSD" },
-				  { "description": "GameStop",       "proName": "NYSE:GME" },
-				  { "description": "S&P 500",        "proName": "AMEX:SPY" },
-				  { "description": "US Volatility Index","proName":"PEPPERSTONE:VIX"}
+				{
+					"description": "Ethereum",
+					"proName": "COINBASE:ETHUSD"
+				},
+				{
+					"description": "Loopring",
+					"proName": "COINBASE:LRCUSD"
+				},
+				{
+					"description": "Immutable",
+					"proName": "COINBASE:IMXUSD"
+				},
+				{
+					"description": "GameStop",
+					"proName": "NYSE:GME"
+				},
+				{
+					"description": "S&P 500",
+					"proName": "AMEX:SPY"
+				},
+				{
+					"description": "US Volatility Index",
+					"proName": "PEPPERSTONE:VIX"
+				}
 				],
-				"showSymbolLogo": true,
-				"isTransparent": true,
-				"displayMode": "regular",
-				"colorTheme": "dark",
-				"locale": "en",
-				"autosize": true
+					"showSymbolLogo": true,
+					"isTransparent": true,
+					"displayMode": "regular",
+					"colorTheme": "dark",
+					"locale": "en",
+					"autosize": true
 				}
 			  </script>
 			</div>
@@ -288,6 +367,7 @@
     }
   
     changeTitle();
+  
     setInterval(changeTitle, intervalDuration);
   });
 </script>
