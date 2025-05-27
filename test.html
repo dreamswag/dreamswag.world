@@ -133,7 +133,7 @@
 	}
 	.tradingview-widget-container {
 		width: 100%;
-		height: 100%; /* Let the container match the widget's height */
+		height: 100%; /* Let the container match the widget’s height */
 	}
 	#header	{
 		position:fixed;
@@ -156,74 +156,54 @@
 		padding: 0;
 	}
 	
-	/* Mobile responsive adjustments - maintain desktop proportions */
 	@media (max-width: 768px) {
-		h1 {
-			font-size: 10vw; /* Scales with viewport width to maintain proportion */
-		}
-		h2 {
-			font-size: 6vw; /* Proportional to h1 */
-		}
-		p {
-			font-size: 2.2vw; /* Maintains readability while scaling */
-			padding: 1vw;
-		}
-		p2 {
-			font-size: 2vw;
-		}
-		video {
-			width: 95vw; /* Use viewport width for consistent scaling */
-			max-width: 95vw;
-			height: auto;
-		}
-		#main {
-			top: 50%; /* Center vertically */
-			left: 50%;
-			width: 95vw; /* Ensure content fits within viewport */
-			transform: translate(-50%, -50%);
-		}
-	}
+    h1 {
+        font-size: 24px; /* Reduced from 24px */
+    }
+    h2 {
+        font-size: 16px; /* Reduced from 18px */
+    }
+    p {
+        font-size: 9px; /* Reduced from 12px */
+    }
+    video {
+        width: 90%; /* Slightly less than 100% for better spacing */
+        height: auto;
+        margin: 0 auto; /* Center the video */
+    }
 	
 	@media (max-width: 480px) {
 		h1 {
-			font-size: 11vw; /* Slightly larger for very small screens */
+			font-size: 18px;
 		}
 		h2 {
-			font-size: 6.5vw;
+			font-size: 14px;
 		}
 		p {
-			font-size: 2.5vw;
-			padding: 1.2vw;
-		}
-		p2 {
-			font-size: 2.2vw;
+			font-size: 9px;
 		}
 	}
 	
-	@media (orientation: landscape) and (max-width: 768px) {
+	@media (orientation: landscape) {
 		body {
-			overflow-x: hidden;
+			overflow-x: hidden; /* Prevent horizontal scrolling */
 		}
 		#main {
-			top: 50%;
-			width: 90vw;
-			transform: translate(-50%, -50%);
-		}
-		h1 {
-			font-size: 8vh; /* Use viewport height in landscape */
-		}
-		h2 {
-			font-size: 5vh;
-		}
-		p {
-			font-size: 2vh;
+			top: 20%; /* Adjusted from 30% for better positioning */
+			width: 100%; /* Ensure it spans the full width */
+			margin: 0; /* Remove any default margins */
 		}
 		video {
-			width: 80vw;
+			width: 70%; /* Reduced from 80% to fit better */
 			height: auto;
+			margin: 0 auto;
+		}
+		h1, h2, p {
+			max-width: 90%; /* Prevent text from stretching too wide */
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
-	
 	.tradingview-widget-container {
 		margin: 0;
 		padding: 0;
@@ -236,22 +216,22 @@
 		border: none !important;
 	}
 	.widget-container {
-      transform: scale(0.6);  /* Scale down to 60% by default */
+      transform: scale(0.6);  /* Scale down to 80% by default */
       transform-origin: top left;  /* Scale from top-left corner */
-      width: 166.67%;  /* Compensate for scaling (100% / 0.6) */
+      width: 166.67%;  /* Compensate for scaling (100% / 0.8) */
       height: 166.67%;
       overflow: hidden;  /* Prevent overflow */
     }
 	@media (max-width: 768px) {
       .widget-container {
-        transform: scale(0.4);  /* Scale to 40% for mobile screens */
-        width: 250%;  /* 100% / 0.4 */
-        height: 250%;
+        transform: scale(0.5);  /* Scale to 60% for smaller screens */
+        width: 200%;  /* 100% / 0.6 */
+        height: 200%;
       }
     }
 	@media (min-width: 769px) {
       .widget-container {
-        transform: scale(0.7);  /* Scale to 70% for larger screens */
+        transform: scale(0.7);  /* Scale to 80% for larger screens */
         width: 142.86%;
         height: 142.86%;
       }
@@ -260,6 +240,8 @@
 	  margin: 0;
 	  padding: 0;
 	}
+}
+}
 	
 	</style>
 </head>
