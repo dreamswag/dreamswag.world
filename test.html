@@ -36,9 +36,6 @@
 		background-size: cover;
 		background-blend-mode: lighten;
 		opacity:1;
-		margin: 0;
-		padding: 0;
-		height: 100vh;
 	}
 	
 	h1
@@ -48,7 +45,6 @@
 		font-family: "Trebuchet MS", sans-serif;
 		text-shadow: 4px 4px #000000;
 		line-height: .69;
-		margin: 0;
 		
 	}
 	h2
@@ -58,7 +54,6 @@
 		font-family: "Trebuchet MS", sans-serif;
 		text-shadow: 3px 3px #000000;
 		line-height: .69;
-		margin: 0;
 		
 	}
 	p
@@ -75,7 +70,6 @@
 		line-height: 2.69;
 		text-shadow: 2px 2px #140101;
 		white-space: normal;
-		margin: 0;
 	}
 	p2
 	{	
@@ -87,9 +81,6 @@
 		text-shadow: 3px 2px #21011e;
 		opacity: 0.22;
 		left: 222px;
-		display: block;
-		text-align: center;
-		margin: 0;
 	}
 	a:link 
 	{
@@ -136,10 +127,9 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		height: 80px; /* Fixed height for consistency */
+		height: auto;
 		box-sizing: border-box;
 		overflow: hidden;
-		z-index: 1000;
 	}
 	.tradingview-widget-container {
 		width: 100%;
@@ -150,17 +140,14 @@
 		top:0;
 		width:100%;
 		left:0;
-		z-index: 1001;
 	}
 	#main{
 		position: fixed;
-		top: 50%;
-		left: 50%;
+		top: 45.5%;
+		left: 50.7%;
 		-webkit-transform: translate(-50%, -50%);
 		transform: translate(-50%, -50%);
 		white-space: nowrap;
-		width: 90%;
-		max-width: 800px;
 	}
 	html, body{
 		overflow: hidden;
@@ -170,85 +157,101 @@
 	}
 	
 	.widget-container {
-		transform: scale(0.6);
-		transform-origin: top left;
-		width: 166.67%;
-		height: 166.67%;
-		overflow: hidden;
-	}
+      transform: scale(0.6);
+      transform-origin: top left;
+      width: 166.67%;
+      height: 166.67%;
+      overflow: hidden;
+    }
 	
-	/* Mobile styles */
-	@media (max-width: 768px) {
+	/* Desktop widget scaling */
+	@media (min-width: 769px) {
+      .widget-container {
+        transform: scale(0.7);
+        width: 142.86%;
+        height: 142.86%;
+      }
+    }
+	
+	/* Tablet adjustments */
+	@media (max-width: 768px) and (min-width: 481px) {
+      .widget-container {
+        transform: scale(0.5);
+        width: 200%;
+        height: 200%;
+      }
+	  
+	  body {
+		background-attachment: scroll;
+	  }
+	  
+	  h1 {
+        font-size: 48px;
+      }
+	  
+	  h2 {
+        font-size: 32px;
+      }
+	  
+	  p {
+        font-size: 14px;
+		padding: 12px;
+		letter-spacing: 1px;
+      }
+	  
+	  p2 {
+        font-size: 12px;
+      }
+	  
+	  video {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+	
+	/* Mobile phone styles - main fixes here */
+	@media (max-width: 480px) {
 		body {
-			background-attachment: scroll; /* Fix for mobile background */
+			background-attachment: scroll;
 		}
 		
 		#main {
-			top: 50%;
-			width: 95%;
-			padding: 0 2.5%;
-			box-sizing: border-box;
+			white-space: normal;
+			width: 90%;
+			padding: 0 5%;
 		}
 		
 		h1 {
-			font-size: 8vw; /* Responsive font size */
-			line-height: 1.2;
-			margin-bottom: 20px;
+			font-size: 32px;
+			line-height: 1.1;
+			margin-bottom: 15px;
 		}
 		
 		h2 {
-			font-size: 5vw;
-			line-height: 1.2;
+			font-size: 22px;
+			line-height: 1.1;
 		}
 		
 		p {
-			font-size: 3.5vw;
-			padding: 3vw;
+			font-size: 14px;
+			padding: 15px;
 			letter-spacing: 0.5px;
 			line-height: 1.8;
-			margin-bottom: 20px;
+			margin: 15px 0;
 		}
 		
 		p2 {
-			font-size: 3vw;
-			line-height: 1.5;
+			font-size: 12px;
+			line-height: 1.4;
+			display: block;
+			text-align: center;
 			margin-top: 15px;
 		}
 		
 		video {
-			width: 95%;
-			margin: 15px auto;
+			width: 100%;
+			margin: 15px 0;
 			border-width: 2px;
-		}
-		
-		#footer {
-			height: 60px;
-		}
-		
-		.widget-container {
-			transform: scale(0.5);
-			width: 200%;
-			height: 200%;
-		}
-	}
-	
-	/* Very small mobile screens */
-	@media (max-width: 480px) {
-		h1 {
-			font-size: 9vw;
-		}
-		
-		h2 {
-			font-size: 6vw;
-		}
-		
-		p {
-			font-size: 4vw;
-			padding: 4vw;
-		}
-		
-		p2 {
-			font-size: 3.5vw;
 		}
 		
 		#footer {
@@ -262,22 +265,22 @@
 		}
 	}
 	
-	/* Landscape orientation fixes */
+	/* Landscape orientation on mobile */
 	@media (orientation: landscape) and (max-height: 600px) {
 		#main {
-			top: 45%;
-			transform: translate(-50%, -45%);
+			top: 50%;
+			width: 80%;
 		}
 		
 		h1 {
-			font-size: 6vw;
+			font-size: 28px;
 			margin-bottom: 10px;
 		}
 		
 		p {
-			font-size: 2.5vw;
-			padding: 2vw;
-			margin-bottom: 10px;
+			font-size: 12px;
+			padding: 10px;
+			margin: 10px 0;
 		}
 		
 		video {
@@ -286,7 +289,7 @@
 		}
 		
 		p2 {
-			font-size: 2vw;
+			font-size: 10px;
 			margin-top: 10px;
 		}
 		
@@ -295,19 +298,10 @@
 		}
 	}
 	
-	/* Large screens */
-	@media (min-width: 769px) {
-		.widget-container {
-			transform: scale(0.7);
-			width: 142.86%;
-			height: 142.86%;
-		}
-	}
-	
-	/* Remove margins and padding from footer content */
+	/* Remove any unwanted margins from footer widgets */
 	#footer * {
-		margin: 0 !important;
-		padding: 0 !important;
+	  margin: 0;
+	  padding: 0;
 	}
 	
 	.tradingview-widget-container iframe,
@@ -322,48 +316,48 @@
 <body>
 	<center>
 	<div class="widget-container">
-		<div class="tradingview-widget-container">
-			<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-			{
-			"symbols": [
-			{
-			  "description": "GameStop",
-			  "proName": "NYSE:GME"
-			},
-			{
-			  "description": "S&P 500",
-			  "proName": "AMEX:SPY"
-			},
-			{
-			  "description": "US Volatility Index",
-			  "proName": "PEPPERSTONE:VIX"
-			},
-			{
-			  "description": "Ethereum",
-			  "proName": "COINBASE:ETHUSD"
-			},
-			{
-			  "description": "Loopring",
-			  "proName": "COINBASE:LRCUSD"
-			},
-			{
-			  "description": "Immutable",
-			  "proName": "COINBASE:IMXUSD"
-			}
-			  ],
-				"showSymbolLogo": true,
-				"isTransparent": true,
-				"displayMode": "regular",
-				"colorTheme": "dark",
-				"locale": "en",
-				"autosize": true
-			}
-			</script>
-		</div>
-	</div>
+    <div class="tradingview-widget-container">
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+		{
+		"symbols": [
+		{
+		  "description": "GameStop",
+		  "proName": "NYSE:GME"
+		},
+		{
+		  "description": "S&P 500",
+		  "proName": "AMEX:SPY"
+		},
+		{
+		  "description": "US Volatility Index",
+		  "proName": "PEPPERSTONE:VIX"
+		},
+		{
+		  "description": "Ethereum",
+		  "proName": "COINBASE:ETHUSD"
+		},
+		{
+		  "description": "Loopring",
+		  "proName": "COINBASE:LRCUSD"
+		},
+		{
+		  "description": "Immutable",
+		  "proName": "COINBASE:IMXUSD"
+		}
+		  ],
+			"showSymbolLogo": true,
+			"isTransparent": true,
+			"displayMode": "regular",
+			"colorTheme": "dark",
+			"locale": "en",
+			"autosize": true
+		}
+      </script>
+    </div>
+  </div>
 
 	<div id="main">
-		<h1>You Just Lost <span style="color:firebrick">The Game!</span></h1>
+		<br><h1>You Just Lost <span style="color:firebrick">The Game!</span></h1>
 		
 		<p>
 			<b><span style="color:white, font-family:Verdana,arial, sans-serif">RULE 1</span></b>:	<a href ="https://www.reddit.com/r/Superstonk/comments/1beyh96/x_marks_the_spot_gamestop_playr_x_xbox_game_pass/" target="_blank">You are playing The Game.</a> <br />
@@ -371,7 +365,11 @@
 			<b><span style="color:white, font-family:Verdana,arial, sans-serif">RULE 3</span></b>:	<a href ="https://www.reddit.com/r/loopringorg/comments/1b36wxm/loopring_a_dormant_quintessential_paypal_superapp/"target="_blank">Loss must be announced.</span></a> <br />
 		</p>
 		
+		<br>
+		
 		<video width="670" height="377" poster="findme.png" controls autoplay loop playsinline disablepictureinpicture src="comedy.mp4"></video>
+		
+		<br>
 		
 		<p2>
 			<i><a href="https://www.drsgme.org/" rel="noopener">The objective of The Game is to forget that it exists.</a></i>
@@ -379,10 +377,12 @@
 		
 	</div>
 
+	<br><br><br>
+	
 	<div id="footer">
 		<div class="widget-container">
 			<div class="tradingview-widget-container">
-				<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+			  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
 				{
 				"symbols": [
 				{
@@ -417,7 +417,7 @@
 					"locale": "en",
 					"autosize": true
 				}
-				</script>
+			  </script>
 			</div>
 		</div>
 	</div>
