@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta-name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta property="og:title" content="Power to the Players 🏴‍☠️" /> 
 	<meta property="og:type" content="website">
     <meta property="og:image" content="https://dreamswag.world/forget.png" /> 
@@ -18,7 +20,6 @@
 	<link rel="icon" type="image/x-icon" href="gamestop.ico">
 	<link rel="canonical" href="https://www.dreamswag.world" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<style type="text/css">
 	
 	
@@ -36,6 +37,17 @@
 		background-size: cover;
 		background-blend-mode: lighten;
 		opacity:1;
+	}
+	html,body
+	{
+		width: 100%;
+		height: 100%;
+		overflow-x: hidden;
+		overscroll-behaviour: none;
+		touch-action: pan-y;
+		position: relative;
+		margin: 0;
+		padding: 0;
 	}
 	
 	h1
@@ -69,7 +81,7 @@
 		letter-spacing: 1.44px;
 		line-height: 2.69;
 		text-shadow: 2px 2px #140101;
-		white-space: normal;
+		white-space: nowrap;
 	}
 	p2
 	{	
@@ -110,36 +122,29 @@
 	}
 	video
 	{
-		max-width: 100%;
-		height: auto;
 		background-color: rgba(0, 0, 0, .9);
 		margin-top: -1px;
 		border-width: 0.42vw 0.42vw 0.42vw 0.42vw;
 		box-shadow: 0px 0px 44px 22px rgba(0, 0, 0, 0.7);
 		padding: 0px;
-		border-radius: 4px;
+		border-radius: 4px 4px 4px 4px;
 		border-color: rgba(61, 20, 48, .69);
 		border-style: ridge;
 		opacity:1;
 	}
-	#footer {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: auto; /* Let the height adjust to the content */
-		box-sizing: border-box; /* Ensure padding is included in height calculation */
-		overflow: hidden; /* Prevent any overflow that might cause a gap */
-	}
-	.tradingview-widget-container {
-		width: 100%;
-		height: 100%; /* Let the container match the widget’s height */
+	#footer	{
+		position:absolute;
+		bottom:0px;
+		width:120%;
+		height:40px;
+		left: 2px;
 	}
 	#header	{
 		position:fixed;
-		top:0;
-		width:100%;
-		left:0;
+		top:-2px;
+		bottom:0px;
+		width:120%;
+		left: 2px;
 	}
 	#main{
 		position: fixed;
@@ -149,109 +154,16 @@
 		transform: translate(-50%, -50%);
 		white-space: nowrap;
 	}​
-	html, body{
-		overflow: hidden;
-		height: 100%;
-		margin: 0;
-		padding: 0;
-	}
 	
-	@media (max-width: 768px) {
-    h1 {
-        font-size: 24px; /* Reduced from 24px */
-    }
-    h2 {
-        font-size: 16px; /* Reduced from 18px */
-    }
-    p {
-        font-size: 9px; /* Reduced from 12px */
-    }
-    video {
-        width: 90%; /* Slightly less than 100% for better spacing */
-        height: auto;
-        margin: 0 auto; /* Center the video */
-    }
-	
-	@media (max-width: 480px) {
-		h1 {
-			font-size: 18px;
-		}
-		h2 {
-			font-size: 14px;
-		}
-		p {
-			font-size: 9px;
-		}
-	}
-	
-	@media (orientation: landscape) {
-		body {
-			overflow-x: hidden; /* Prevent horizontal scrolling */
-		}
-		#main {
-			top: 20%; /* Adjusted from 30% for better positioning */
-			width: 100%; /* Ensure it spans the full width */
-			margin: 0; /* Remove any default margins */
-		}
-		video {
-			width: 70%; /* Reduced from 80% to fit better */
-			height: auto;
-			margin: 0 auto;
-		}
-		h1, h2, p {
-			max-width: 90%; /* Prevent text from stretching too wide */
-			margin-left: auto;
-			margin-right: auto;
-		}
-	}
-	.tradingview-widget-container {
-		margin: 0;
-		padding: 0;
-		height: 100%; /* Ensure it takes the full height of the footer */
-	}
-	.tradingview-widget-container iframe,
-	.tradingview-widget-container div {
-		margin: 0 !important;
-		padding: 0 !important;
-		border: none !important;
-	}
-	.widget-container {
-      transform: scale(0.6);  /* Scale down to 80% by default */
-      transform-origin: top left;  /* Scale from top-left corner */
-      width: 166.67%;  /* Compensate for scaling (100% / 0.8) */
-      height: 166.67%;
-      overflow: hidden;  /* Prevent overflow */
-    }
-	@media (max-width: 768px) {
-      .widget-container {
-        transform: scale(0.5);  /* Scale to 60% for smaller screens */
-        width: 200%;  /* 100% / 0.6 */
-        height: 200%;
-      }
-    }
-	@media (min-width: 769px) {
-      .widget-container {
-        transform: scale(0.7);  /* Scale to 80% for larger screens */
-        width: 142.86%;
-        height: 142.86%;
-      }
-    }
-	#footer * {
-	  margin: 0;
-	  padding: 0;
-	}
-}
-}
 	
 	</style>
 </head>
 <body>
 	<center>
-	<div class="widget-container">
-    <div class="tradingview-widget-container">
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-		{
-		"symbols": [
+	<div id="header">
+	  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+	  {
+	  "symbols": [
 		{
 		  "description": "GameStop",
 		  "proName": "NYSE:GME"
@@ -263,6 +175,10 @@
 		{
 		  "description": "US Volatility Index",
 		  "proName": "PEPPERSTONE:VIX"
+		},
+		{
+			"description": "Bitcoin",
+			"proName": "COINBASE:BTCUSD"
 		},
 		{
 		  "description": "Ethereum",
@@ -277,16 +193,14 @@
 		  "proName": "COINBASE:IMXUSD"
 		}
 		  ],
-			"showSymbolLogo": true,
-			"isTransparent": true,
-			"displayMode": "regular",
-			"colorTheme": "dark",
-			"locale": "en",
-			"autosize": true
+		  "showSymbolLogo": true,
+		  "isTransparent": true,
+		  "displayMode": "regular",
+		  "colorTheme": "dark",
+		  "locale": "en"
 		}
-      </script>
-    </div>
-  </div>
+	  </script>
+	</div>
 
 	<div id="main">
 		<br><h1>You Just Lost <span style="color:firebrick">The Game!</span></h1>
@@ -294,7 +208,7 @@
 		<p>
 			<b><span style="color:white, font-family:Verdana,arial, sans-serif">RULE 1</span></b>:	<a href ="https://www.reddit.com/r/Superstonk/comments/1beyh96/x_marks_the_spot_gamestop_playr_x_xbox_game_pass/" target="_blank">You are playing The Game.</a> <br />
 			<b><span style="color:white, font-family:Verdana,arial, sans-serif">RULE 2</span></b>:	<a href ="https://www.reddit.com/r/Superstonk/comments/148sqku/why_gamestop_is_primed_to_become_the_amazon_x/" target="_blank">Whenever you think about The Game, you lose.</span></a> <br />
-			<b><span style="color:white, font-family:Verdana,arial, sans-serif">RULE 3</span></b>:	<a href ="https://www.reddit.com/r/loopringorg/comments/1b36wxm/loopring_a_dormant_quintessential_paypal_superapp/"target="_blank">Loss must be announced.</span></a> <br />
+			<b><span style="color:white, font-family:Verdana,arial, sans-serif">RULE 3</span></b>:	<a href ="https://www.reddit.com/r/loopringorg/comments/1i3ptr6/gamestop_x_psacard_could_singlehandedly_warrant/"target="_blank">Loss must be announced.</span></a> <br />
 		</p>
 		
 		<br>
@@ -312,48 +226,49 @@
 	<br><br><br>
 	
 	<div id="footer">
-		<div class="widget-container">
-			<div class="tradingview-widget-container">
-			  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-				{
-				"symbols": [
-				{
-					"description": "Ethereum",
-					"proName": "COINBASE:ETHUSD"
-				},
-				{
-					"description": "Loopring",
-					"proName": "COINBASE:LRCUSD"
-				},
-				{
-					"description": "Immutable",
-					"proName": "COINBASE:IMXUSD"
-				},
-				{
-					"description": "GameStop",
-					"proName": "NYSE:GME"
-				},
-				{
-					"description": "S&P 500",
-					"proName": "AMEX:SPY"
-				},
-				{
-					"description": "US Volatility Index",
-					"proName": "PEPPERSTONE:VIX"
-				}
-				],
-					"showSymbolLogo": true,
-					"isTransparent": true,
-					"displayMode": "regular",
-					"colorTheme": "dark",
-					"locale": "en",
-					"autosize": true
-				}
-			  </script>
-			</div>
-		</div>
+		<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+		{
+		"symbols": [
+		{
+			"description": "Bitcoin",
+			"proName": "COINBASE:BTCUSD"
+		},
+		{
+			"description": "Ethereum",
+			"proName": "COINBASE:ETHUSD"
+		},
+		{
+			"description": "Loopring",
+			"proName": "COINBASE:LRCUSD"
+		},
+		{
+			"description": "Immutable",
+			"proName": "COINBASE:IMXUSD"
+		},
+		{
+			"description": "GameStop",
+			"proName": "NYSE:GME"
+		},
+		{
+			"description": "S&P 500",
+			"proName": "AMEX:SPY"
+		},
+		{
+			"description": "US Volatility Index",
+			"proName": "PEPPERSTONE:VIX"
+		}
+		],
+			"showSymbolLogo": true,
+			"isTransparent": true,
+			"displayMode": "regular",
+			"colorTheme": "dark",
+			 "locale": "en"
+		}
+		</script>
 	</div>
+	
 </center>
+	
 </body>
 <script>
   window.addEventListener('DOMContentLoaded', function() {
