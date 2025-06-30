@@ -137,7 +137,11 @@
 		will-change: transform;
 		transform: translateZ(0);
 	}
-	
+	@supports (-webkit-touch-callout: none) {
+		video {
+			filter: brightness(0.88); 
+		}
+	}
 	
 	#footer	{
 		position:absolute;
