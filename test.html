@@ -139,8 +139,6 @@
             width: 669px;
             height: 369px;
             transform: scale(1.07);
-            max-width: 75%;
-            max-height: auto;
         }
         
         .ticker-header {
@@ -175,28 +173,35 @@
         }
         
         @media screen and (max-width: 768px) {
-
             .main-content {
-                top: 48%; 
+                top: 50%;
+                transform: translate(-50%, -50%);
                 white-space: normal; 
             }
 
             h1 {
-                font-size: clamp(24px, 8vw, 74.1px);
+                font-size: clamp(28px, 7vw, 42px);
+                margin-bottom: 0.75rem;
             }
             
             video {
-                width: 90vw;
+                width: 85vw;
                 height: auto; 
-                max-width: 670px;
-                transform: scale(1.0);
+                max-width: 450px;
+                transform: none;
+                margin-top: 0;
             }
             
             .rules-box {
-                padding: 2vw;
-                font-size: clamp(12px, 3vw, 16px); 
-                white-space: normal; 
-                line-height: 1.6; 
+                white-space: normal;
+                padding: 2vw 4vw;
+                font-size: clamp(12px, 2.8vw, 15px);
+                line-height: 1.5;
+                margin-bottom: 0.75rem;
+            }
+            .footer-text {
+                font-size: clamp(12px, 2.5vw, 14px);
+                margin-top: 0.75rem;
             }
         }
     </style>
@@ -238,16 +243,14 @@
         </div>
         
         <video 
-            width="670" 
-
-            height="377" 
             poster="findme.png" 
             controls 
             autoplay 
             loop 
             playsinline 
             disablepictureinpicture
-            preload="metadata">
+            preload="metadata"
+        >
             <source src="comedy.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
