@@ -73,7 +73,6 @@ body {
   background-color: #000;
 }
 
-/* CHANGE 1: Nudged background up further */
 #background-overlay {
   position: fixed;
   inset: 0;
@@ -83,7 +82,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-blend-mode: lighten;
-  background-position: center 30%; 
+  background-position: center 70%; 
   opacity: 0;
 }
 
@@ -91,14 +90,20 @@ html, body { width: 100%; height: 100%; overflow: hidden !important; margin: 0; 
 
 #main {
   position: fixed;
-  top: 47%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
+  width: 90%;
+  max-width: 670px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
-  font-size: 74.1px;
+  font-size: 10vw;
   text-align: center;
   font-family: "Trebuchet MS", sans-serif;
   text-shadow: 4px 4px #000000;
@@ -119,7 +124,8 @@ p {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 550px; 
+  width: 100%; 
+  max-width: 550px;
   margin: 0 auto 50px auto;
   padding: 20px 40px;
   border-radius: 22px;
@@ -141,12 +147,13 @@ video {
   border-width: 0.42vw;
   border-style: ridge;
   border-color: rgba(61, 20, 48, .69);
+  width: 100%;
+  height: auto;
 }
 
 a:link, a:visited { color: white; text-decoration: none; transition: color 0.3s ease; }
 a:hover, a:active { color: #c364c3; }
 
-/* CHANGE 5a: Moved text down */
 #objective-text {
   display: block;
   text-align: center;
@@ -159,9 +166,11 @@ a:hover, a:active { color: #c364c3; }
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   margin-top: 35px;
+  font-size: 3vw;
 }
 
-#header, #footer { position: fixed; width: 120%; left: 0; }
+/* FIXED: Header centering issue - using proper centering method */
+#header, #footer { position: fixed; width: 120%; left: 50%; transform: translateX(-50%); }
 #header { top: -2px; }
 #footer { bottom: 0; }
 
@@ -171,7 +180,6 @@ a:hover, a:active { color: #c364c3; }
   animation: background-fade-reveal 7s ease-in 4.1s forwards;
 }
 
-/* CHANGE 4: Accelerated timing from 'Just' onwards */
 #word-you, #word-just, #word-lost {
   opacity: 0;
   animation: cascade-fade-in 1s ease-in forwards;
@@ -179,7 +187,6 @@ a:hover, a:active { color: #c364c3; }
 #word-just { animation-delay: 2s; }
 #word-lost { animation-delay: 2.6s; }
 
-/* CHANGE 4: Re-timed to follow accelerated sequence */
 #title-part-2 {
   display: inline-block;
   color: #e62020;
@@ -189,16 +196,14 @@ a:hover, a:active { color: #c364c3; }
     title-glow-pulse 11s ease-in-out 7.4s infinite;
 }
 
-/* CHANGE 4: Re-timed to follow accelerated sequence */
 #rules-container { opacity: 0; animation: full-fade-in 1s ease-in 4.8s forwards; }
 .rule { display: block; opacity: 0; animation: cascade-unfold 1.0s ease-out forwards; padding: 5px 0; }
 #rule-1 { animation-delay: 5.8s; }
 #rule-2 { animation-delay: 6.3s; }
 #rule-3 { animation-delay: 6.8s; }
 
-#video-container { position: relative; width: 670px; height: 377px; margin: 0 auto; }
+#video-container { position: relative; width: 100%; height: auto; margin: 0 auto; }
 
-/* CHANGE 4: Re-timed to follow accelerated sequence */
 #video-container video { 
   position: relative; 
   z-index: 2; 
@@ -209,26 +214,96 @@ a:hover, a:active { color: #c364c3; }
   animation: full-fade-in 1s ease-in 8.0s forwards, aura-pulse 10.5s ease-in-out 9.5s infinite; 
 }
 
-/* CHANGE 4: Re-timed to follow accelerated sequence */
 #header, #footer { opacity: 0; animation: full-fade-in 1s ease-in 8.0s forwards; }
-/* CHANGE 4 & 5b: Re-timed and slowed down fade-in */
 #objective-text { animation: objective-fade-in 2.5s ease-in 9.5s forwards; }
 
-/* --- RESPONSIVENESS & ACCESSIBILITY --- */
+/* --- RESPONSIVENESS & MOBILE DEVICE ADAPTATIONS --- */
 
-@media screen and (max-width: 768px) {
-  #main { white-space: normal; width: 95%; left: 50%; }
-  #rules-container { width: 100%; padding: 15px 20px; }
-  h1 { font-size: 48px; }
-  #video-container { width: 100%; height: auto; }
-  video { width: 100%; height: auto; border-width: 2.5vw; }
+/* Enhanced mobile compatibility for modern iOS/Android devices */
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 74.1px;
+  }
+  #objective-text {
+    font-size: 1em;
+  }
 }
 
+/* Comprehensive mobile adaptations for iOS/Android */
+@media screen and (max-width: 768px) {
+  #main { 
+    white-space: normal; 
+    width: 95%; 
+    left: 50%; 
+    top: 50%;
+  }
+  #background-overlay {
+    background-position: center 85%;
+  }
+  #rules-container { 
+    width: 100%; 
+    padding: 15px 20px; 
+    white-space: normal;
+    border-radius: 15px; /* Slightly smaller radius for mobile */
+  }
+  h1 { 
+    font-size: 8vw; 
+    white-space: normal;
+    line-height: 0.8; /* Better mobile line spacing */
+  }
+  #video-container { 
+    width: 100%; 
+    height: auto; 
+  }
+  video { 
+    width: 100%; 
+    height: auto; 
+    border-width: 2.5vw; 
+    border-radius: 8px; /* Mobile-friendly border radius */
+  }
+  #objective-text {
+    font-size: 4vw;
+    margin-top: 25px; /* Tighter spacing on mobile */
+  }
+}
+
+/* Additional mobile optimizations */
+@media screen and (max-width: 480px) {
+  #rules-container {
+    padding: 12px 15px;
+    margin-bottom: 35px;
+  }
+  h1 {
+    margin-bottom: 35px;
+  }
+  #objective-text {
+    font-size: 4.5vw;
+  }
+}
+
+/* High-resolution displays (Retina) */
+@media screen and (-webkit-min-device-pixel-ratio: 2), 
+       screen and (min-resolution: 192dpi) {
+  video {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Touch-friendly enhancements */
+@media (hover: none) and (pointer: coarse) {
+  a:link, a:visited {
+    padding: 2px 4px; /* Larger touch targets */
+  }
+  video {
+    -webkit-tap-highlight-color: transparent; /* Remove iOS tap highlight */
+  }
+}
+
+/* Accessibility - Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
   #background-overlay { opacity: 1; }
   #word-you, #word-just, #word-lost, #title-part-2, #rules-container, .rule, #video-container video, #header, #footer, #objective-text { opacity: 1; }
   #objective-text { opacity: 0.125; }
-  #title-part-2 { text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d; }
-  #video-container video { box-shadow: -1px 1px 19px 3px rgba(108, 20, 120, 0.4), inset 0 0 13px 8px rgba(40, 10, 30, 0.7); }
 }
