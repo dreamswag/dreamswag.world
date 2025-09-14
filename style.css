@@ -1,399 +1,631 @@
-/* style.css - Mobile-Optimized Complete Version */
+/* style.css */
+
+
 
 /* --- KEYFRAMES FOR ANIMATIONS --- */
 
+
+
 @keyframes full-fade-in {
+
   from { opacity: 0; }
+
   to { opacity: 1; }
+
 }
+
+
 
 @keyframes cascade-fade-in {
+
   from { opacity: 0; }
+
   to { opacity: 1; }
+
 }
+
+
 
 @keyframes title-entrance-glow {
+
   from {
+
     opacity: 0;
+
     text-shadow: 4px 4px 4px #000, 0 0 5px #8b0000, 0 0 8px #8b0000;
+
   }
+
   to {
+
     opacity: 1;
+
     text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
+
   }
+
 }
+
+
+
+/* CHANGE 2: Updated fade-out opacity and timing */
 
 @keyframes title-glow-pulse {
+
   0% {
+
     opacity: 1;
+
     text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
+
   }
-  88% {
+
+  88% { /* Long fade-out */
+
     opacity: 0.44; 
+
     text-shadow: 4px 4px 4px #000, 0 0 4px #8b0000, 0 0 6px #8b0000;
+
   }
-  100% {
+
+  100% { /* Rapid fade-in */
+
     opacity: 1;
+
     text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
+
   }
+
 }
+
+
 
 @keyframes background-fade-reveal {
+
   0% { opacity: 0; }
+
   100% { opacity: 1; }
+
 }
+
+
+
+/* CHANGE 3: Reduced aura range and realigned */
 
 @keyframes aura-pulse {
+
   0%, 100% {
+
     box-shadow: -1px 1px 13px 1px rgba(108, 20, 120, 0.35), inset 0 0 10px 7px rgba(40, 10, 30, 0.7);
+
   }
+
   50% {
+
     box-shadow: -1px 1px 19px 3px rgba(108, 20, 120, 0.45), inset 0 0 13px 8px rgba(40, 10, 30, 0.7);
+
   }
+
 }
+
+
 
 @keyframes cascade-unfold {
+
   from { opacity: 0; transform: translateY(-10px) translateZ(0); }
+
   to { opacity: 1; transform: translateY(0) translateZ(0); }
+
 }
 
+
+
 @keyframes objective-fade-in {
+
   from { opacity: 0; }
+
   to { opacity: 0.125; }
+
 }
+
+
+
+
 
 /* --- GENERAL & BASE STYLING --- */
 
-* {
-  box-sizing: border-box;
-}
+
 
 body {
-  font-family: Verdana, arial, sans-serif; 
-  color: white; 
-  max-width: 100%;
+
+  font-family: Verdana, arial, sans-serif; color: white; max-width: 100%;
+
   overflow: hidden; 
+
   background-color: #000;
-  margin: 0;
-  padding: 0;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 }
+
+
 
 #background-overlay {
+
   position: fixed;
+
   inset: 0;
+
   z-index: -2;
+
   background-image: url('741.png');
+
   background-repeat: no-repeat;
+
   background-attachment: fixed;
+
   background-size: cover;
+
   background-blend-mode: lighten;
+
   background-position: center 70%; 
+
   opacity: 0;
+
 }
 
-html, body { 
-  width: 100%; 
-  height: 100%; 
-  overflow: hidden !important; 
-  margin: 0; 
-  padding: 0; 
-  touch-action: manipulation; /* Improve touch performance */
-}
+
+
+html, body { width: 100%; height: 100%; overflow: hidden !important; margin: 0; padding: 0; }
+
+
 
 #main {
+
   position: fixed;
+
   top: 50%;
+
   left: 50%;
+
   transform: translate(-50%, -50%);
+
   white-space: nowrap;
+
   width: 90%;
+
   max-width: 670px;
+
   text-align: center;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
 }
+
+
 
 h1 {
-  font-size: min(10vw, 74px); /* Prevent excessive scaling */
+
+  font-size: 10vw;
+
   text-align: center;
+
   font-family: "Trebuchet MS", sans-serif;
+
   text-shadow: 4px 4px #000000;
+
   line-height: .69;
+
   margin-bottom: 50px; 
+
   color: #ddd;
+
 }
+
+
 
 p {
+
   background-color: rgba(22, 22, 22, 0.6);
+
   backdrop-filter: blur(10px);
+
   -webkit-backdrop-filter: blur(10px);
+
   border: none; 
+
 }
+
+
 
 #rules-container {
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   text-align: center;
+
   width: 100%; 
+
   max-width: 550px;
+
   margin: 0 auto 50px auto;
+
   padding: 20px 40px;
+
   border-radius: 22px;
+
   box-sizing: border-box;
+
   color: #a9a9a9;
+
   letter-spacing: 1px;
+
   line-height: 1.8;
+
   text-shadow: 2px 2px #140101;
+
   border: 5px solid rgba(0, 0, 0, 1);
+
 }
+
+
 
 video {
+
   padding: 0;
+
   border-radius: 4px;
+
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
   background-color: rgba(22, 22, 22, 0.6);
+
   backdrop-filter: blur(10px);
+
   -webkit-backdrop-filter: blur(10px);
-  border-width: min(0.42vw, 8px); /* Cap border width */
+
+  border-width: 0.42vw;
+
   border-style: ridge;
+
   border-color: rgba(61, 20, 48, .69);
+
   width: 100%;
+
   height: auto;
-  /* Enhanced video performance on mobile */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+
 }
 
-a:link, a:visited { 
-  color: white; 
-  text-decoration: none; 
-  transition: color 0.3s ease;
-  /* Larger touch targets for mobile */
-  min-height: 44px;
-  min-width: 44px;
-  display: inline-block;
-  padding: 2px;
-}
+
+
+a:link, a:visited { color: white; text-decoration: none; transition: color 0.3s ease; }
 
 a:hover, a:active { color: #c364c3; }
 
+
+
 #objective-text {
+
   display: block;
+
   text-align: center;
+
   font-family: 'Times New Roman', serif;
+
   text-shadow: 2px 2px #120110;
+
   color: #555;
+
   opacity: 0;
+
   background-color: transparent;
+
   border: none;
+
   backdrop-filter: none;
+
   -webkit-backdrop-filter: none;
+
   margin-top: 35px;
-  font-size: min(3vw, 18px); /* Cap font size */
+
+  font-size: 3vw;
+
 }
 
-#header, #footer { 
-  position: fixed; 
-  width: 100%; 
-  left: 50%; 
-  transform: translateX(-50%);
-  z-index: 10;
-}
+
+
+/* FIXED: Header centering issue - using proper centering method */
+
+#header, #footer { position: fixed; width: 120%; left: 50%; transform: translateX(-50%); }
 
 #header { top: -2px; }
+
 #footer { bottom: 0; }
+
+
 
 /* --- ANIMATION ORCHESTRATION --- */
 
+
+
 #background-overlay {
+
   animation: background-fade-reveal 7s ease-in 4.1s forwards;
+
 }
 
+
+
 #word-you, #word-just, #word-lost {
+
   opacity: 0;
+
   animation: cascade-fade-in 1s ease-in forwards;
+
 }
 
 #word-just { animation-delay: 2s; }
+
 #word-lost { animation-delay: 2.6s; }
 
+
+
 #title-part-2 {
+
   display: inline-block;
+
   color: #e62020;
+
   opacity: 0;
+
   animation: 
+
     title-entrance-glow 3.69s ease-out 4.4s forwards,
+
     title-glow-pulse 11s ease-in-out 7.4s infinite;
+
 }
 
-#rules-container { 
-  opacity: 0; 
-  animation: full-fade-in 1s ease-in 4.8s forwards; 
-}
 
-.rule { 
-  display: block; 
-  opacity: 0; 
-  animation: cascade-unfold 1.0s ease-out forwards; 
-  padding: 5px 0; 
-}
+
+#rules-container { opacity: 0; animation: full-fade-in 1s ease-in 4.8s forwards; }
+
+.rule { display: block; opacity: 0; animation: cascade-unfold 1.0s ease-out forwards; padding: 5px 0; }
 
 #rule-1 { animation-delay: 5.8s; }
+
 #rule-2 { animation-delay: 6.3s; }
+
 #rule-3 { animation-delay: 6.8s; }
 
-#video-container { 
-  position: relative; 
-  width: 100%; 
-  height: auto; 
-  margin: 0 auto; 
-}
+
+
+#video-container { position: relative; width: 100%; height: auto; margin: 0 auto; }
+
+
 
 #video-container video { 
+
   position: relative; 
+
   z-index: 2; 
+
   width: 100%; 
+
   height: 100%; 
+
   opacity: 0; 
+
   box-shadow: -1px 1px 13px 1px rgba(108, 20, 120, 0.35), inset 0 0 10px 7px rgba(40, 10, 30, 0.7);
+
   animation: full-fade-in 1s ease-in 8.0s forwards, aura-pulse 10.5s ease-in-out 9.5s infinite; 
+
 }
 
-#header, #footer { 
-  opacity: 0; 
-  animation: full-fade-in 1s ease-in 8.0s forwards; 
-}
 
-#objective-text { 
-  animation: objective-fade-in 2.5s ease-in 9.5s forwards; 
-}
 
-/* --- DESKTOP STYLING --- */
+#header, #footer { opacity: 0; animation: full-fade-in 1s ease-in 8.0s forwards; }
 
-@media screen and (min-width: 1024px) {
+#objective-text { animation: objective-fade-in 2.5s ease-in 9.5s forwards; }
+
+
+
+/* --- RESPONSIVENESS & MOBILE DEVICE ADAPTATIONS --- */
+
+
+
+/* Enhanced mobile compatibility for modern iOS/Android devices */
+
+@media screen and (min-width: 768px) {
+
   h1 {
-    font-size: 74px;
+
+    font-size: 74.1px;
+
   }
+
   #objective-text {
-    font-size: 18px;
+
+    font-size: 1em;
+
   }
-  #header, #footer {
-    width: 120%;
-  }
+
 }
 
-/* --- TABLET LANDSCAPE --- */
 
-@media screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
-  #main {
-    width: 85%;
-    max-width: 800px;
-  }
-  h1 {
-    font-size: min(8vw, 64px);
-  }
-  #rules-container {
-    max-width: 600px;
-    padding: 18px 35px;
-  }
-  video {
-    border-width: min(0.8vw, 6px);
-  }
-  #objective-text {
-    font-size: min(2.5vw, 16px);
-  }
-}
 
-/* --- TABLET PORTRAIT --- */
+/* Comprehensive mobile adaptations for iOS/Android */
 
-@media screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
-  h1 {
-    font-size: min(9vw, 68px);
-  }
-  #rules-container {
-    max-width: 500px;
-    padding: 18px 30px;
-  }
-  video {
-    border-width: min(1.2vw, 8px);
-  }
-  #objective-text {
-    font-size: min(3vw, 20px);
-  }
-}
+@media screen and (max-width: 768px) {
 
-/* --- MOBILE LANDSCAPE (iPhone 15 Pro Max, Samsung Galaxy, etc.) --- */
-
-@media screen and (max-width: 767px) and (orientation: landscape) {
   #main { 
+
     white-space: normal; 
-    width: 95%;
-    max-width: 700px; /* Prevent excessive width on ultra-wide screens */
+
+    width: 95%; 
+
+    left: 50%; 
+
+    top: 50%;
+
   }
-  
+
   #background-overlay {
-    background-position: center 80%;
+
+    background-position: center 85%;
+
   }
-  
+
   #rules-container { 
+
     width: 100%; 
-    max-width: 500px; /* Critical: prevent container overflow */
-    padding: 10px 20px; 
+
+    padding: 15px 20px; 
+
     white-space: normal;
-    border-radius: 12px;
-    margin-bottom: 30px;
+
+    border-radius: 15px; /* Slightly smaller radius for mobile */
+
   }
-  
+
   h1 { 
-    font-size: min(6vh, 36px); /* Use vh for landscape, strict cap */
+
+    font-size: 8vw; 
+
     white-space: normal;
-    line-height: 0.9;
-    margin-bottom: 30px;
+
+    line-height: 0.8; /* Better mobile line spacing */
+
   }
-  
+
   #video-container { 
+
     width: 100%; 
-    max-width: 450px; /* Critical: prevent video overflow */
+
     height: auto; 
+
   }
-  
+
   video { 
+
     width: 100%; 
+
     height: auto; 
-    border-width: min(1vh, 4px); /* Much smaller borders in landscape */
-    border-radius: 6px;
+
+    border-width: 2.5vw; 
+
+    border-radius: 8px; /* Mobile-friendly border radius */
+
   }
-  
+
   #objective-text {
-    font-size: min(2vh, 14px); /* Use vh, strict cap */
-    margin-top: 20px;
+
+    font-size: 4vw;
+
+    margin-top: 25px; /* Tighter spacing on mobile */
+
   }
-  
-  .rule {
-    font-size: min(2.2vh, 14px);
-    padding: 3px 0;
-  }
+
 }
 
-/* --- MOBILE PORTRAIT (Standard mobile experience) --- */
 
-@media screen and (max-width: 767px) and (orientation: portrait) {
+
+/* Additional mobile optimizations */
+
+@media screen and (max-width: 480px) {
+
+  #rules-container {
+
+    padding: 12px 15px;
+
+    margin-bottom: 35px;
+
+  }
+
+  h1 {
+
+    margin-bottom: 35px;
+
+  }
+
+  #objective-text {
+
+    font-size: 4.5vw;
+
+  }
+
+}
+
+
+
+/* High-resolution displays (Retina) */
+
+@media screen and (-webkit-min-device-pixel-ratio: 2), 
+
+       screen and (min-resolution: 192dpi) {
+
+  video {
+
+    image-rendering: -webkit-optimize-contrast;
+
+    image-rendering: crisp-edges;
+
+  }
+
+}
+
+
+
+/* Touch-friendly enhancements */
+
+@media (hover: none) and (pointer: coarse) {
+
+  a:link, a:visited {
+
+    padding: 2px 4px; /* Larger touch targets */
+
+  }
+
+  video {
+
+    -webkit-tap-highlight-color: transparent; /* Remove iOS tap highlight */
+
+  }
+
+}
+
+
+
+/* Accessibility - Reduced motion preference */
+
+@media (prefers-reduced-motion: reduce) {
+
+  * { animation: none !important; transition: none !important; }
+
+  #background-overlay { opacity: 1; }
+
+  #word-you, #word-just, #word-lost, #title-part-2, #rules-container, .rule, #video-container video, #header, #footer, #objective-text { opacity: 1; }
+
+  #objective-text { opacity: 0.125; }
+
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
   #main { 
     white-space: normal; 
     width: 95%; 
+    left: 50%; 
+    top: 50%;
   }
-  
   #background-overlay {
     background-position: center 85%;
   }
-  
   #rules-container { 
     width: 100%; 
     max-width: 90vw; /* Prevent overflow */
@@ -401,135 +633,94 @@ a:hover, a:active { color: #c364c3; }
     white-space: normal;
     border-radius: 15px;
   }
-  
   h1 { 
-    font-size: min(12vw, 48px); /* Responsive but capped */
+    font-size: min(8vw, 48px); /* Cap the maximum size */
     white-space: normal;
     line-height: 0.8;
   }
-  
   #video-container { 
     width: 100%; 
     max-width: 90vw; /* Prevent overflow */
     height: auto; 
   }
-  
   video { 
     width: 100%; 
     height: auto; 
-    border-width: min(3vw, 8px); /* Cap border size */
+    border-width: min(2.5vw, 8px); /* Cap border size */
     border-radius: 8px;
   }
-  
   #objective-text {
-    font-size: min(4.5vw, 18px); /* Cap font size */
+    font-size: min(4vw, 18px); /* Cap font size */
     margin-top: 25px;
   }
 }
 
-/* --- SMALL MOBILE SCREENS --- */
+/* Mobile Landscape - Handles ultra-wide screens like iPhone 15 Pro Max */
+@media screen and (max-width: 1366px) and (orientation: landscape) {
+  #main { 
+    white-space: normal; 
+    width: 95%; 
+    max-width: 800px; /* Prevent excessive width */
+  }
+  #rules-container { 
+    width: 100%; 
+    max-width: 600px; /* Control container size */
+    padding: 12px 20px; 
+    white-space: normal;
+  }
+  h1 { 
+    font-size: min(6vh, 42px); /* Use vh for landscape, cap size */
+    white-space: normal;
+    line-height: 0.8;
+  }
+  #video-container { 
+    width: 100%; 
+    max-width: 600px; /* Control video container */
+  }
+  video { 
+    width: 100%; 
+    height: auto; 
+    border-width: min(1vh, 6px); /* Much smaller borders in landscape */
+    border-radius: 8px;
+  }
+  #objective-text {
+    font-size: min(2.5vh, 16px); /* Use vh units, cap size */
+    margin-top: 20px;
+  }
+}
 
+/* Ultra-wide screens (iPhone 15 Pro Max landscape, etc.) */
+@media screen and (min-width: 1200px) and (max-height: 600px) {
+  h1 {
+    font-size: 38px; /* Fixed size for ultra-wide */
+  }
+  #rules-container {
+    max-width: 500px;
+    padding: 10px 20px;
+  }
+  #video-container {
+    max-width: 500px;
+  }
+  video {
+    border-width: 4px; /* Fixed border for ultra-wide */
+  }
+  #objective-text {
+    font-size: 14px; /* Fixed size for ultra-wide */
+  }
+}
+
+/* Additional fix for very small screens */
 @media screen and (max-width: 480px) {
   #rules-container {
     padding: 12px 15px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     max-width: 95vw;
   }
-  
   h1 {
-    margin-bottom: 30px;
-    font-size: min(11vw, 42px); /* Smaller cap for tiny screens */
+    margin-bottom: 35px;
+    font-size: min(8vw, 36px); /* Smaller cap for tiny screens */
   }
-  
   #objective-text {
-    font-size: min(4vw, 16px);
-  }
-  
-  .rule {
-    font-size: min(3.5vw, 14px);
-    line-height: 1.6;
-  }
-}
-
-/* --- ULTRA-WIDE SCREENS (iPhone 15 Pro Max landscape, Samsung Galaxy Ultra, etc.) --- */
-
-@media screen and (min-width: 1200px) and (max-height: 600px) {
-  h1 {
-    font-size: 38px !important; /* Fixed size for ultra-wide */
-  }
-  
-  #rules-container {
-    max-width: 500px !important;
-    padding: 8px 20px !important;
-  }
-  
-  #video-container {
-    max-width: 450px !important;
-  }
-  
-  video {
-    border-width: 4px !important; /* Fixed border for ultra-wide */
-  }
-  
-  #objective-text {
-    font-size: 14px !important; /* Fixed size for ultra-wide */
-  }
-  
-  .rule {
-    font-size: 13px !important;
-  }
-}
-
-/* --- PERFORMANCE OPTIMIZATIONS FOR MOBILE --- */
-
-/* Reduce motion for better performance */
-@media (hover: none) and (pointer: coarse) {
-  * {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-  
-  video {
-    -webkit-tap-highlight-color: transparent;
-  }
-}
-
-/* High-resolution displays (Retina) */
-@media screen and (-webkit-min-device-pixel-ratio: 2), 
-       screen and (min-resolution: 192dpi) {
-  video {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-  }
-}
-
-/* iOS Safari specific fixes */
-@supports (-webkit-overflow-scrolling: touch) {
-  body {
-    -webkit-overflow-scrolling: touch;
-    -webkit-transform: translateZ(0);
-  }
-  
-  #background-overlay {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-}
-
-/* Accessibility - Reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  * { 
-    animation: none !important; 
-    transition: none !important; 
-  }
-  
-  #background-overlay { opacity: 1; }
-  
-  #word-you, #word-just, #word-lost, #title-part-2, #rules-container, .rule, #video-container video, #header, #footer, #objective-text { 
-    opacity: 1; 
-  }
-  
-  #objective-text { 
-    opacity: 0.125; 
+    font-size: min(4.5vw, 16px);
   }
 }
