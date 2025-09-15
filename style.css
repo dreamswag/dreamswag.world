@@ -30,6 +30,11 @@
 
 
 
+@keyframes crossbones-fade-in {
+  from { opacity: 0; }
+  to { opacity: 0.25; }
+}
+
 
 
 
@@ -489,9 +494,9 @@ p {
     align-items: center;
     text-align: center;
     width: 100%; 
-    max-width: 550px;
+    max-width: 520px;
     margin: 0 auto 50px auto;
-    padding: 40px 50px;
+    padding: 35px 45px;
     box-sizing: border-box;
     color: #c7c7c7;
     letter-spacing: 1px;
@@ -499,6 +504,7 @@ p {
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
     overflow: hidden;
     z-index: 1;
+    font-size: 0.9em; /* CHANGE 1: Rule text made smaller */
 
     /* --- Diamond Shape --- */
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -570,11 +576,11 @@ p {
     background-image: url('crossbones.gif');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: contain; /* CHANGE 2: GIF size reduced from 'contain' to 90% */
     
     /* Minimal filtering to keep visibility */
     filter: blur(1px) brightness(0.6) contrast(1.1);
-    opacity: 0.25;
+    opacity: 0;
     mix-blend-mode: screen;
     z-index: -2;
     
@@ -584,6 +590,9 @@ p {
     /* Subtle vignette */
     mask: radial-gradient(ellipse at center, black 70%, rgba(0,0,0,0.8) 90%, transparent 100%);
     -webkit-mask: radial-gradient(ellipse at center, black 70%, rgba(0,0,0,0.8) 90%, transparent 100%);
+
+    animation: crossbones-fade-in 2.5s ease-in 9.5s forwards;
+
 }
 
 /* Diamond facet reflections */
@@ -646,7 +655,7 @@ p {
     
     #rules-container::before {
         filter: blur(0.5px) brightness(0.7) contrast(1.05);
-        opacity: 0.2;
+        opacity: 0; /* Keep it 0 to respect animation */
         clip-path: polygon(50% 5%, 95% 25%, 95% 75%, 50% 95%, 5% 75%, 5% 25%);
     }
     
@@ -1440,7 +1449,7 @@ a:hover, a:active { color: #c364c3; }
 
     width: 100%; 
 
-    max-width: 600px; /* Control container size */
+    max-width: min(550px, 80vh); /* Corrected line */
 
     padding: 12px 20px; 
 
