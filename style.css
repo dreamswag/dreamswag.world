@@ -252,9 +252,6 @@ a:hover, a:active { color: #c364c3; }
     height: auto; 
     border-width: 2.5vw; 
   }
-  		p {
-
-		}
 }
 
 @media (prefers-reduced-motion: reduce) {
