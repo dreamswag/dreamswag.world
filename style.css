@@ -234,6 +234,11 @@ a:hover, a:active { color: #c364c3; }
     padding: 15px 20px; 
     white-space: normal;
 	width: 47.1%; 
+	font-size: 13px;
+	white-space: normal;
+	padding: 2vw 4vw;
+	line-height: 1.6;
+	letter-spacing: 0.5px;
   }
   h1 { 
     font-size: 48px; 
@@ -248,11 +253,7 @@ a:hover, a:active { color: #c364c3; }
     border-width: 2.5vw; 
   }
   		p {
-			font-size: 13px;
-			white-space: normal;
-			padding: 2vw 4vw;
-			line-height: 1.6;
-			letter-spacing: 0.5px;
+
 		}
 }
 
