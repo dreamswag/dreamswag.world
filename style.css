@@ -233,7 +233,7 @@ a:hover, a:active { color: #c364c3; }
   #rules-container { 
     padding: 15px 20px; 
     white-space: normal;
-	width: 74.1%; 
+	width: 47.1%; 
   }
   h1 { 
     font-size: 48px; 
@@ -247,6 +247,13 @@ a:hover, a:active { color: #c364c3; }
     height: auto; 
     border-width: 2.5vw; 
   }
+  		p {
+			font-size: 13px;
+			white-space: normal;
+			padding: 2vw 4vw;
+			line-height: 1.6;
+			letter-spacing: 0.5px;
+		}
 }
 
 @media (prefers-reduced-motion: reduce) {
