@@ -129,7 +129,6 @@ p {
   line-height: 1.8;
   text-shadow: 2px 2px #140101;
   border: 5px solid rgba(0, 0, 0, 1);
-  white-space: normal;
 }
 
 video {
@@ -218,15 +217,28 @@ a:hover, a:active { color: #c364c3; }
 /* --- RESPONSIVENESS & ACCESSIBILITY --- */
 
 @media screen and (max-width: 768px) {
-  #main { white-space: normal; width: 95%; left: 50%; }
-  #rules-container {
-    width: 100%;
-    padding: 15px 20px;
-    white-space: normal; /* <-- Add this line */
+  #main { 
+    white-space: normal; 
+    width: 95%; 
+    left: 50%; 
   }
-  h1 { font-size: 48px; }
-  #video-container { width: 100%; height: auto; }
-  video { width: 100%; height: auto; border-width: 2.5vw; }
+  #rules-container { 
+    width: 100%; 
+    padding: 15px 20px; 
+    white-space: normal;
+  }
+  h1 { 
+    font-size: 48px; 
+  }
+  #video-container { 
+    width: 100%; 
+    height: auto; 
+  }
+  video { 
+    width: 100%; 
+    height: auto; 
+    border-width: 2.5vw; 
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
