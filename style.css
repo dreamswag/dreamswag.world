@@ -218,7 +218,11 @@ a:hover, a:active { color: #c364c3; }
 
 @media screen and (max-width: 768px) {
   #main { white-space: normal; width: 95%; left: 50%; }
-  #rules-container { width: 100%; padding: 15px 20px; }
+  #rules-container {
+    width: 100%;
+    padding: 15px 20px;
+    white-space: normal; /* <-- Add this line */
+  }
   h1 { font-size: 48px; }
   #video-container { width: 100%; height: auto; }
   video { width: 100%; height: auto; border-width: 2.5vw; }
