@@ -1,6 +1,6 @@
 /* style.css */
 
-/* --- KEYFRAMES FOR ANIMATIONS --- */
+/* --- KEYFRAMES --- */
 
 @keyframes full-fade-in {
   from { opacity: 0; }
@@ -23,17 +23,17 @@
   }
 }
 
-/* CHANGE 2: Updated fade-out opacity and timing */
+
 @keyframes title-glow-pulse {
   0% {
     opacity: 1;
     text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
   }
-  88% { /* Long fade-out */
+  88% { 
     opacity: 0.44; 
     text-shadow: 4px 4px 4px #000, 0 0 4px #8b0000, 0 0 6px #8b0000;
   }
-  100% { /* Rapid fade-in */
+  100% { 
     opacity: 1;
     text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
   }
@@ -44,7 +44,7 @@
   100% { opacity: 1; }
 }
 
-/* CHANGE 3: Reduced aura range and realigned */
+
 @keyframes aura-pulse {
   0%, 100% {
     box-shadow: -1px 1px 13px 1px rgba(108, 20, 120, 0.35), inset 0 0 10px 7px rgba(40, 10, 30, 0.7);
@@ -73,7 +73,6 @@ body {
   background-color: #000;
 }
 
-/* CHANGE 1: Nudged background up further */
 #background-overlay {
   position: fixed;
   inset: 0;
@@ -133,10 +132,10 @@ p {
 
 #rules-container { 
   width: 100%; 
-  padding: 15px 10px;      /* Gives text 20px more horizontal room */
+  padding: 15px 10px;      
   white-space: normal;
-  letter-spacing: 0.5px;   /* Slightly tightens text */
-  box-sizing: border-box;  /* Ensures padding is included in the width */
+  letter-spacing: 0.5px;   
+  box-sizing: border-box;  
 }
 
 video {
@@ -154,7 +153,7 @@ video {
 a:link, a:visited { color: white; text-decoration: none; transition: color 0.3s ease; }
 a:hover, a:active { color: #c364c3; }
 
-/* CHANGE 5a: Moved text down */
+
 #objective-text {
   display: block;
   text-align: center;
@@ -179,7 +178,6 @@ a:hover, a:active { color: #c364c3; }
   animation: background-fade-reveal 7s ease-in 4.1s forwards;
 }
 
-/* CHANGE 4: Accelerated timing from 'Just' onwards */
 #word-you, #word-just, #word-lost {
   opacity: 0;
   animation: cascade-fade-in 1s ease-in forwards;
@@ -187,7 +185,6 @@ a:hover, a:active { color: #c364c3; }
 #word-just { animation-delay: 2s; }
 #word-lost { animation-delay: 2.6s; }
 
-/* CHANGE 4: Re-timed to follow accelerated sequence */
 #title-part-2 {
   display: inline-block;
   color: #e62020;
@@ -197,7 +194,7 @@ a:hover, a:active { color: #c364c3; }
     title-glow-pulse 11s ease-in-out 7.4s infinite;
 }
 
-/* CHANGE 4: Re-timed to follow accelerated sequence */
+
 #rules-container { opacity: 0; animation: full-fade-in 1s ease-in 4.8s forwards; }
 .rule { display: block; opacity: 0; animation: cascade-unfold 1.0s ease-out forwards; padding: 5px 0; }
 #rule-1 { animation-delay: 5.8s; }
@@ -206,7 +203,7 @@ a:hover, a:active { color: #c364c3; }
 
 #video-container { position: relative; width: 670px; height: 377px; margin: 0 auto; }
 
-/* CHANGE 4: Re-timed to follow accelerated sequence */
+
 #video-container video { 
   position: relative; 
   z-index: 2; 
@@ -217,9 +214,9 @@ a:hover, a:active { color: #c364c3; }
   animation: full-fade-in 1s ease-in 8.0s forwards, aura-pulse 10.5s ease-in-out 9.5s infinite; 
 }
 
-/* CHANGE 4: Re-timed to follow accelerated sequence */
+
 #header, #footer { opacity: 0; animation: full-fade-in 1s ease-in 8.0s forwards; }
-/* CHANGE 4 & 5b: Re-timed and slowed down fade-in */
+
 #objective-text { animation: objective-fade-in 2.5s ease-in 9.5s forwards; }
 
 /* --- RESPONSIVENESS & ACCESSIBILITY --- */
