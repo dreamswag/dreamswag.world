@@ -129,6 +129,7 @@ p {
   line-height: 1.8;
   text-shadow: 2px 2px #140101;
   border: 5px solid rgba(0, 0, 0, 1);
+  white-space: normal;
 }
 
 video {
