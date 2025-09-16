@@ -228,7 +228,7 @@ a:hover, a:active { color: #c364c3; }
     left: 50%; 
   }
   #background-overlay {
-    background-position: center 30%; 
+    background-position: 16% 99%; 
   }
   #rules-container { 
     padding: 15px 20px; 
