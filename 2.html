@@ -16,288 +16,300 @@
   <meta name="robots" content="nosnippet">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
+  
   <title>Power to the Players 🏴‍☠️</title>
   <link rel="icon" type="image/x-icon" href="gamestop.ico">
   <link rel="canonical" href="https://www.swag.fail" />
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <style type="text/css">
-/* --- KEYFRAMES --- */
-
-@keyframes full-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes cascade-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes title-entrance-glow {
-  from {
+  
+  /* --- KEYFRAMES FOR ANIMATIONS --- */
+  
+  @keyframes full-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes cascade-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes title-entrance-glow {
+    from {
+      opacity: 0;
+      text-shadow: 4px 4px 4px #000, 0 0 5px #8b0000, 0 0 8px #8b0000;
+    }
+    to {
+      opacity: 1;
+      text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
+    }
+  }
+  
+  @keyframes title-glow-pulse {
+    0% {
+      opacity: 1;
+      text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
+    }
+    88% { 
+      opacity: 0.44; 
+      text-shadow: 4px 4px 4px #000, 0 0 4px #8b0000, 0 0 6px #8b0000;
+    }
+    100% { 
+      opacity: 1;
+      text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
+    }
+  }
+  
+  @keyframes background-fade-reveal {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes aura-pulse {
+    0%, 100% {
+      box-shadow: -1px 1px 13px 1px rgba(108, 20, 120, 0.35), inset 0 0 10px 7px rgba(40, 10, 30, 0.7);
+    }
+    50% {
+      box-shadow: -1px 1px 19px 3px rgba(108, 20, 120, 0.45), inset 0 0 13px 8px rgba(40, 10, 30, 0.7);
+    }
+  }
+  
+  @keyframes cascade-unfold {
+    from { opacity: 0; transform: translateY(-10px) translateZ(0); }
+    to { opacity: 1; transform: translateY(0) translateZ(0); }
+  }
+  
+  @keyframes objective-fade-in {
+    from { opacity: 0; }
+    to { opacity: 0.22; }
+  }
+  
+  /* --- BASE STYLING FROM INDEX.HTML --- */
+  
+  html {
+    background-color: #09060a;
+  }
+  
+  body
+  {
+    font-family: Verdana, arial, sans-serif;
+    color: white;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow: hidden;
+    background-image: url('741.png');
+    background-repeat: no-repeat;
+    background-position: 16% 99%;
+    background-attachment: fixed; 
+    background-size: cover;
+    background-blend-mode: lighten;
+    opacity:1;
+  }
+  html,body
+  {
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+    overscroll-behaviour: none !important;
+    touch-action: none !important;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1
+  {
+    font-size: 74.1px;
+    text-align: center;
+    font-family: "Trebuchet MS", sans-serif;
+    text-shadow: 4px 4px #000000;
+    line-height: .69;
+    
+  }
+  h2
+  {
+    font-size: 44px;
+    text-align: center;
+    font-family: "Trebuchet MS", sans-serif;
+    text-shadow: 3px 3px #000000;
+    line-height: .69;
+    
+  }
+  p
+  {	
+    background-color: rgba(22, 22, 22, 0.69);
+    border-width: 5px 5px 5px 6px;
+    padding: .42vw;
+    border-radius: 22px 22px 22px 22px;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    opacity:0.9;
+    color: #696969;
+    letter-spacing: 1.44px;
+    line-height: 2.69;
+    text-shadow: 2px 2px #140101;
+    white-space: nowrap;
+  }
+  p2
+  {	
+    line-height:33px;
+    color: rgba(174,174,174, 0.69);
+    font-size: 14.7px;
+    letter-spacing: .33px;
+    font-family: 'Times New Roman', serif;
+    text-shadow: 3px 2px #21011e;
+    opacity: 0.22;
+    left: 222px;
+  }
+  a:link 
+  {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited 
+  {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover 
+  {
+    color: darkmagenta;
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a:active 
+  {
+    color: darkmagenta;
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  video
+  {
+    background-color: rgba(0, 0, 0, .9);
+    margin-top: -1px;
+    border-width: 0.42vw 0.42vw 0.42vw 0.42vw;
+    box-shadow:0 0 40px -10px rgba(0,0,0,.3),
+    0 0 25px -15px rgba(0,0,0,.2);
+    padding: 0px;
+    border-radius: 4px 4px 4px 4px;
+    border-color: rgba(61, 20, 48, .69);
+    border-style: ridge;
+    opacity:1;
+    border: 0 4px -15px rgba(0,0,0,.3);
+    box-shadow: 0 0 40px -10px rgba(0,0,0,.3),
+    inset 0 0 25 -15px rgba(61, 20, 48, .69);
+  }
+  
+  
+  
+  #footer	{
+    position:absolute;
+    bottom:0px;
+    width:120%;
+    height:40px;
+    left: 2px;
+  }
+  #header	{
+    position:fixed;
+    top:-2px;
+    bottom:0px;
+    width:120%;
+    left: 2px;
+  }
+  #main{
+    position: fixed;
+    top: 45.5%;
+    left: 50.7%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+  
+  #bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  /* --- ANIMATION APPLICATION --- */
+  
+  #word-you, #word-just, #word-lost {
     opacity: 0;
-    text-shadow: 4px 4px 4px #000, 0 0 5px #8b0000, 0 0 8px #8b0000;
+    animation: cascade-fade-in 1s ease-in forwards;
   }
-  to {
-    opacity: 1;
-    text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
+  
+  #word-just { 
+    animation-delay: 2s; 
   }
-}
-
-@keyframes title-glow-pulse {
-  0% {
-    opacity: 1;
-    text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
+  
+  #word-lost { 
+    animation-delay: 2.6s; 
   }
-  88% { 
-    opacity: 0.44; 
-    text-shadow: 4px 4px 4px #000, 0 0 4px #8b0000, 0 0 6px #8b0000;
+  
+  #title-part-2 {
+    display: inline-block;
+    color: firebrick;
+    opacity: 0;
+    animation: 
+      title-entrance-glow 3.69s ease-out 4.4s forwards,
+      title-glow-pulse 11s ease-in-out 7.4s infinite;
   }
-  100% { 
-    opacity: 1;
-    text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
-  }
-}
-
-@keyframes background-fade-reveal {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes aura-pulse {
-  0%, 100% {
-    box-shadow: -1px 1px 13px 1px rgba(108, 20, 120, 0.35), inset 0 0 10px 7px rgba(40, 10, 30, 0.7);
-  }
-  50% {
-    box-shadow: -1px 1px 19px 3px rgba(108, 20, 120, 0.45), inset 0 0 13px 8px rgba(40, 10, 30, 0.7);
-  }
-}
-
-@keyframes cascade-unfold {
-  from { opacity: 0; transform: translateY(-10px) translateZ(0); }
-  to { opacity: 1; transform: translateY(0) translateZ(0); }
-}
-
-@keyframes objective-fade-in {
-  from { opacity: 0; }
-  to { opacity: 0.22; }
-}
-
-/* --- BASE STYLING (matching index.html) --- */
-
-html {
-  background-color: #09060a;
-}
-
-body {
-  font-family: Verdana, arial, sans-serif;
-  color: white;
-  max-width: 100%;
-  overflow-x: hidden;
-  overflow: hidden;
-  background-image: url('741.png');
-  background-repeat: no-repeat;
-  background-position: 16% 99%;
-  background-attachment: fixed; 
-  background-size: cover;
-  background-blend-mode: lighten;
-  opacity: 1;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden !important;
-  overscroll-behaviour: none !important;
-  touch-action: none !important;
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  font-size: 74.1px;
-  text-align: center;
-  font-family: "Trebuchet MS", sans-serif;
-  text-shadow: 4px 4px #000000;
-  line-height: .69;
-}
-
-p {	
-  background-color: rgba(22, 22, 22, 0.69);
-  border-width: 5px 5px 5px 6px;
-  padding: .42vw;
-  border-radius: 22px 22px 22px 22px;
-  border-color: rgba(0, 0, 0, 1);
-  border-style: solid;
-  opacity: 0.9;
-  color: #696969;
-  letter-spacing: 1.44px;
-  line-height: 2.69;
-  text-shadow: 2px 2px #140101;
-  white-space: nowrap;
-}
-
-p2 {	
-  line-height: 33px;
-  color: rgba(174,174,174, 0.69);
-  font-size: 14.7px;
-  letter-spacing: .33px;
-  font-family: 'Times New Roman', serif;
-  text-shadow: 3px 2px #21011e;
-  opacity: 0.22;
-  left: 222px;
-}
-
-a:link {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: darkmagenta;
-  background-color: transparent;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:active {
-  color: darkmagenta;
-  background-color: transparent;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-video {
-  background-color: rgba(0, 0, 0, .9);
-  margin-top: -1px;
-  border-width: 0.42vw 0.42vw 0.42vw 0.42vw;
-  box-shadow: 0 0 40px -10px rgba(0,0,0,.3),
-  0 0 25px -15px rgba(0,0,0,.2);
-  padding: 0px;
-  border-radius: 4px 4px 4px 4px;
-  border-color: rgba(61, 20, 48, .69);
-  border-style: ridge;
-  opacity: 1;
-  border: 0 4px -15px rgba(0,0,0,.3);
-  box-shadow: 0 0 40px -10px rgba(0,0,0,.3),
-  inset 0 0 25 -15px rgba(61, 20, 48, .69);
-}
-
-#footer {
-  position: absolute;
-  bottom: 0px;
-  width: 120%;
-  height: 40px;
-  left: 2px;
-}
-
-#header {
-  position: fixed;
-  top: -2px;
-  bottom: 0px;
-  width: 120%;
-  left: 2px;
-}
-
-#main {
-  position: fixed;
-  top: 45.5%;
-  left: 50.7%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
-}
-
-#bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-/* --- ANIMATION STYLES --- */
-
-#word-you, #word-just, #word-lost {
-  opacity: 0;
-  animation: cascade-fade-in 1s ease-in forwards;
-}
-
-#word-just { 
-  animation-delay: 2s; 
-}
-
-#word-lost { 
-  animation-delay: 2.6s; 
-}
-
-#title-part-2 {
-  display: inline-block;
-  color: #e62020;
-  opacity: 0;
-  animation: 
-    title-entrance-glow 3.69s ease-out 4.4s forwards,
-    title-glow-pulse 11s ease-in-out 7.4s infinite;
-}
-
-p {
-  opacity: 0;
-  animation: full-fade-in 1s ease-in 4.8s forwards;
-}
-
-.rule {
-  display: block;
-  opacity: 0;
-  animation: cascade-unfold 1.0s ease-out forwards;
-}
-
-#rule-1 { 
-  animation-delay: 5.8s; 
-}
-
-#rule-2 { 
-  animation-delay: 6.3s; 
-}
-
-#rule-3 { 
-  animation-delay: 6.8s; 
-}
-
-video {
-  opacity: 0;
-  animation: full-fade-in 1s ease-in 8.0s forwards, aura-pulse 10.5s ease-in-out 9.5s infinite;
-}
-
-#header, #footer {
-  opacity: 0;
-  animation: full-fade-in 1s ease-in 8.0s forwards;
-}
-
-p2 {
-  opacity: 0;
-  animation: objective-fade-in 2.5s ease-in 9.5s forwards;
-}
-
-/* --- MOBILE RESPONSIVE (matching index.html) --- */
-
-@media screen and (max-width: 430px) {
+  
   p {
-    font-size: 13px;
-    white-space: normal;
-    padding: 2vw 4vw;
-    line-height: 1.6;
-    letter-spacing: 0.5px;
+    opacity: 0;
+    animation: full-fade-in 1s ease-in 4.8s forwards;
   }
-}
+  
+  .rule {
+    display: inline-block;
+    opacity: 0;
+    animation: cascade-unfold 1.0s ease-out forwards;
+  }
+  
+  #rule-1 { 
+    animation-delay: 5.8s; 
+  }
+  
+  #rule-2 { 
+    animation-delay: 6.3s; 
+  }
+  
+  #rule-3 { 
+    animation-delay: 6.8s; 
+  }
+  
+  video {
+    opacity: 0;
+    animation: full-fade-in 1s ease-in 8.0s forwards, aura-pulse 10.5s ease-in-out 9.5s infinite;
+  }
+  
+  #header, #footer {
+    opacity: 0;
+    animation: full-fade-in 1s ease-in 8.0s forwards;
+  }
+  
+  p2 {
+    opacity: 0;
+    animation: objective-fade-in 2.5s ease-in 9.5s forwards;
+  }
+  
+  @media screen and (max-width: 430px) {
+    p {
+      font-size: 13px;
+      white-space: normal;
+      padding: 2vw 4vw;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+    }
+  }
+  
   </style>
 </head>
 <body>
@@ -353,9 +365,9 @@ p2 {
     </h1>
     
     <p>
-      <span class="rule" id="rule-1"><b><span style="color:white; font-family:Verdana,arial, sans-serif">RULE 1</span></b>: <a href="https://www.reddit.com/r/Superstonk/comments/1beyh96/x_marks_the_spot_gamestop_playr_x_xbox_game_pass/" target="_blank">You are playing The Game.</a></span><br />
-      <span class="rule" id="rule-2"><b><span style="color:white; font-family:Verdana,arial, sans-serif">RULE 2</span></b>: <a href="https://www.reddit.com/r/Superstonk/comments/148sqku/why_gamestop_is_primed_to_become_the_amazon_x/" target="_blank">Whenever you think about The Game, you lose.</a></span><br />
-      <span class="rule" id="rule-3"><b><span style="color:white; font-family:Verdana,arial, sans-serif">RULE 3</span></b>: <a href="https://www.reddit.com/r/loopringorg/comments/1i3ptr6/gamestop_x_psacard_could_singlehandedly_warrant/" target="_blank">Loss must be announced.</a></span><br />
+      <span class="rule" id="rule-1"><b><span style="color:white; font-family:Verdana,arial, sans-serif">RULE 1</span></b>:	<a href ="https://www.reddit.com/r/Superstonk/comments/1beyh96/x_marks_the_spot_gamestop_playr_x_xbox_game_pass/" target="_blank">You are playing The Game.</a></span> <br />
+      <span class="rule" id="rule-2"><b><span style="color:white; font-family:Verdana,arial, sans-serif">RULE 2</span></b>:	<a href ="https://www.reddit.com/r/Superstonk/comments/148sqku/why_gamestop_is_primed_to_become_the_amazon_x/" target="_blank">Whenever you think about The Game, you lose.</a></span> <br />
+      <span class="rule" id="rule-3"><b><span style="color:white; font-family:Verdana,arial, sans-serif">RULE 3</span></b>:	<a href ="https://www.reddit.com/r/loopringorg/comments/1i3ptr6/gamestop_x_psacard_could_singlehandedly_warrant/" target="_blank">Loss must be announced.</a></span> <br />
     </p>
     
     <br>
@@ -485,7 +497,7 @@ p2 {
       renderer.setSize(innerWidth, innerHeight);
     });
   </script>
-
+  
   <script>
     window.addEventListener('DOMContentLoaded', function() {
       var titles = ['Power to the Collectors 🏴‍☠️', 'Power to the Creators 🏴‍☠️', 'Power to the Players 🏴‍☠️'];
