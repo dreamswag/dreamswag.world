@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:title" content="Power to the Players 🏴‍☠️" /> 
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://swag.fail/forget.png" /> 
@@ -21,7 +22,362 @@
   <link rel="icon" type="image/x-icon" href="gamestop.ico">
   <link rel="canonical" href="https://www.swag.fail" />
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-  <link rel="stylesheet" href="style.css">
+  <style type="text/css">
+/* --- KEYFRAMES --- */
+
+@keyframes full-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cascade-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes title-entrance-glow {
+  from {
+    opacity: 0;
+    text-shadow: 4px 4px 4px #000, 0 0 5px #8b0000, 0 0 8px #8b0000;
+  }
+  to {
+    opacity: 1;
+    text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
+  }
+}
+
+
+@keyframes title-glow-pulse {
+  0% {
+    opacity: 1;
+    text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
+  }
+  88% { 
+    opacity: 0.44; 
+    text-shadow: 4px 4px 4px #000, 0 0 4px #8b0000, 0 0 6px #8b0000;
+  }
+  100% { 
+    opacity: 1;
+    text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d;
+  }
+}
+
+@keyframes background-fade-reveal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+@keyframes aura-pulse {
+  0%, 100% {
+    box-shadow: -1px 1px 13px 1px rgba(108, 20, 120, 0.35), inset 0 0 10px 7px rgba(40, 10, 30, 0.7);
+  }
+  50% {
+    box-shadow: -1px 1px 19px 3px rgba(108, 20, 120, 0.45), inset 0 0 13px 8px rgba(40, 10, 30, 0.7);
+  }
+}
+
+@keyframes cascade-unfold {
+  from { opacity: 0; transform: translateY(-10px) translateZ(0); }
+  to { opacity: 1; transform: translateY(0) translateZ(0); }
+}
+
+@keyframes objective-fade-in {
+  from { opacity: 0; }
+  to { opacity: 0.125; }
+}
+
+
+/* --- GENERAL & BASE STYLING --- */
+
+body {
+  font-family: Verdana, arial, sans-serif; 
+  color: white; 
+  max-width: 100%;
+  overflow: hidden; 
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+html, body { 
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden !important; 
+}
+
+#background-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url('741.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-blend-mode: lighten;
+  background-position: center 30%; 
+  opacity: 0;
+}
+
+#main {
+  position: fixed;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+h1 {
+  font-size: 74.1px;
+  text-align: center;
+  font-family: "Trebuchet MS", sans-serif;
+  text-shadow: 4px 4px #000000;
+  line-height: .69;
+  margin-bottom: 50px; 
+  color: #ddd;
+}
+
+#rules-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 550px; 
+  margin: 0 auto 50px auto;
+  padding: 20px 40px;
+  border-radius: 22px;
+  box-sizing: border-box;
+  color: #a9a9a9;
+  letter-spacing: 1px;
+  line-height: 1.8;
+  text-shadow: 2px 2px #140101;
+  border: 5px solid rgba(0, 0, 0, 1);
+  background-color: rgba(22, 22, 22, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.rule {
+  display: block;
+  padding: 5px 0;
+}
+
+video {
+  padding: 0;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background-color: rgba(22, 22, 22, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-width: 0.42vw;
+  border-style: ridge;
+  border-color: rgba(61, 20, 48, .69);
+}
+
+a:link, a:visited { 
+  color: white; 
+  text-decoration: none; 
+  transition: color 0.3s ease; 
+}
+
+a:hover, a:active { 
+  color: #c364c3; 
+}
+
+#objective-text {
+  display: block;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  text-shadow: 2px 2px #120110;
+  color: #555;
+  opacity: 0;
+  background-color: transparent;
+  border: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  margin-top: 35px;
+}
+
+#header, #footer { 
+  position: fixed; 
+  width: 120%; 
+  left: 0; 
+}
+
+#header { 
+  top: -2px; 
+}
+
+#footer { 
+  bottom: 0; 
+}
+
+/* --- ANIMATION ORCHESTRATION --- */
+
+#background-overlay {
+  animation: background-fade-reveal 7s ease-in 4.1s forwards;
+}
+
+#word-you, #word-just, #word-lost {
+  opacity: 0;
+  animation: cascade-fade-in 1s ease-in forwards;
+}
+
+#word-just { 
+  animation-delay: 2s; 
+}
+
+#word-lost { 
+  animation-delay: 2.6s; 
+}
+
+#title-part-2 {
+  display: inline-block;
+  color: #e62020;
+  opacity: 0;
+  animation: 
+    title-entrance-glow 3.69s ease-out 4.4s forwards,
+    title-glow-pulse 11s ease-in-out 7.4s infinite;
+}
+
+#rules-container { 
+  opacity: 0; 
+  animation: full-fade-in 1s ease-in 4.8s forwards; 
+}
+
+.rule { 
+  opacity: 0; 
+  animation: cascade-unfold 1.0s ease-out forwards; 
+}
+
+#rule-1 { 
+  animation-delay: 5.8s; 
+}
+
+#rule-2 { 
+  animation-delay: 6.3s; 
+}
+
+#rule-3 { 
+  animation-delay: 6.8s; 
+}
+
+#video-container { 
+  position: relative; 
+  width: 670px; 
+  height: 377px; 
+  margin: 0 auto; 
+}
+
+#video-container video { 
+  position: relative; 
+  z-index: 2; 
+  width: 100%; 
+  height: 100%; 
+  opacity: 0; 
+  box-shadow: -1px 1px 13px 1px rgba(108, 20, 120, 0.35), inset 0 0 10px 7px rgba(40, 10, 30, 0.7);
+  animation: full-fade-in 1s ease-in 8.0s forwards, aura-pulse 10.5s ease-in-out 9.5s infinite; 
+}
+
+#header, #footer { 
+  opacity: 0; 
+  animation: full-fade-in 1s ease-in 8.0s forwards; 
+}
+
+#objective-text { 
+  animation: objective-fade-in 2.5s ease-in 9.5s forwards; 
+}
+
+/* --- RESPONSIVENESS & ACCESSIBILITY --- */
+
+@media screen and (max-width: 768px) {
+  #main { 
+    white-space: normal; 
+    width: 90%; 
+    left: 50%; 
+  }
+  
+  #background-overlay {
+    background-position: center center; 
+  }
+  
+  h1 { 
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 30px;
+  }
+  
+  #rules-container { 
+    width: 90%; 
+    font-size: 14px; 
+    white-space: normal;
+    padding: 15px 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+  }
+  
+  #video-container { 
+    width: 90%; 
+    height: auto; 
+  }
+  
+  video { 
+    width: 100%; 
+    height: auto; 
+    border-width: 2.5vw; 
+  }
+}
+
+@media screen and (max-width: 430px) {
+  h1 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+  
+  #rules-container {
+    font-size: 13px;
+    padding: 12px 15px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { 
+    animation: none !important; 
+    transition: none !important; 
+  }
+  
+  #background-overlay { 
+    opacity: 1; 
+  }
+  
+  #word-you, #word-just, #word-lost, #title-part-2, #rules-container, .rule, #video-container video, #header, #footer, #objective-text { 
+    opacity: 1; 
+  }
+  
+  #objective-text { 
+    opacity: 0.125; 
+  }
+  
+  #title-part-2 { 
+    text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d; 
+  }
+  
+  #video-container video { 
+    box-shadow: -1px 1px 19px 3px rgba(108, 20, 120, 0.4), inset 0 0 13px 8px rgba(40, 10, 30, 0.7); 
+  }
+}
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+  </style>
 
 </head>
 <body>
@@ -130,7 +486,7 @@
     scene.add(points);
 
     let introFinished = false;
-    let rotationSpeedY = 0.001; // Initial slow speed
+    let rotationSpeedY = 0.001;
 
     setTimeout(() => {
       introFinished = true;
@@ -138,8 +494,8 @@
 
     let burstActive = false;
     let burstEndTime = 0;
-    const BURST_DURATION = 200; // ms
-    const BURST_CHANCE = 0.005; // 0.5% chance per frame
+    const BURST_DURATION = 200;
+    const BURST_CHANCE = 0.005;
 
     function animate() {
       requestAnimationFrame(animate);
@@ -147,17 +503,16 @@
       if (introFinished) {
         if (burstActive) {
           if (Date.now() > burstEndTime) {
-            burstActive = false; // Burst ends
+            burstActive = false;
           } else {
-            rotationSpeedY = 0.02; // During burst, use high speed
+            rotationSpeedY = 0.02;
           }
         } else {
           if (Math.random() < BURST_CHANCE) {
             burstActive = true;
             burstEndTime = Date.now() + BURST_DURATION;
-            rotationSpeedY = 0.02; // Start burst immediately
+            rotationSpeedY = 0.02;
           } else {
-            // Normal baseline oscillation
             rotationSpeedY = 0.0025 + Math.sin(Date.now() * 0.0005) * 0.0015;
           }
         }
@@ -172,6 +527,23 @@
       camera.aspect = innerWidth / innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(innerWidth, innerHeight);
+    });
+  </script>
+  
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var titles = ['Power to the Collectors 🏴‍☠️', 'Power to the Creators 🏴‍☠️', 'Power to the Players 🏴‍☠️'];
+      var currentIndex = 0;
+      var intervalDuration = 2222;
+    
+      function changeTitle() {
+        document.title = titles[currentIndex];
+        currentIndex = (currentIndex + 1) % titles.length;
+      }
+    
+      changeTitle();
+    
+      setInterval(changeTitle, intervalDuration);
     });
   </script>
 </body>
