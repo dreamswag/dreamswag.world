@@ -45,7 +45,6 @@
   }
 }
 
-
 @keyframes title-glow-pulse {
   0% {
     opacity: 1;
@@ -66,7 +65,6 @@
   100% { opacity: 1; }
 }
 
-
 @keyframes aura-pulse {
   0%, 100% {
     box-shadow: -1px 1px 13px 1px rgba(108, 20, 120, 0.35), inset 0 0 10px 7px rgba(40, 10, 30, 0.7);
@@ -83,47 +81,38 @@
 
 @keyframes objective-fade-in {
   from { opacity: 0; }
-  to { opacity: 0.125; }
+  to { opacity: 0.22; }
 }
 
+/* --- BASE STYLING (matching index.html) --- */
 
-/* --- GENERAL & BASE STYLING --- */
+html {
+  background-color: #09060a;
+}
 
 body {
-  font-family: Verdana, arial, sans-serif; 
-  color: white; 
+  font-family: Verdana, arial, sans-serif;
+  color: white;
   max-width: 100%;
-  overflow: hidden; 
-  background-color: #000;
-  margin: 0;
-  padding: 0;
-}
-
-html, body { 
-  width: 100%; 
-  height: 100%; 
-  overflow: hidden !important; 
-}
-
-#background-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
+  overflow-x: hidden;
+  overflow: hidden;
   background-image: url('741.png');
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-position: 16% 99%;
+  background-attachment: fixed; 
   background-size: cover;
   background-blend-mode: lighten;
-  background-position: center 30%; 
-  opacity: 0;
+  opacity: 1;
 }
 
-#main {
-  position: fixed;
-  top: 47%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+  overscroll-behaviour: none !important;
+  touch-action: none !important;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -132,90 +121,111 @@ h1 {
   font-family: "Trebuchet MS", sans-serif;
   text-shadow: 4px 4px #000000;
   line-height: .69;
-  margin-bottom: 50px; 
-  color: #ddd;
 }
 
-#rules-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 550px; 
-  margin: 0 auto 50px auto;
-  padding: 20px 40px;
-  border-radius: 22px;
-  box-sizing: border-box;
-  color: #a9a9a9;
-  letter-spacing: 1px;
-  line-height: 1.8;
+p {	
+  background-color: rgba(22, 22, 22, 0.69);
+  border-width: 5px 5px 5px 6px;
+  padding: .42vw;
+  border-radius: 22px 22px 22px 22px;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  opacity: 0.9;
+  color: #696969;
+  letter-spacing: 1.44px;
+  line-height: 2.69;
   text-shadow: 2px 2px #140101;
-  border: 5px solid rgba(0, 0, 0, 1);
-  background-color: rgba(22, 22, 22, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  white-space: nowrap;
 }
 
-.rule {
-  display: block;
-  padding: 5px 0;
+p2 {	
+  line-height: 33px;
+  color: rgba(174,174,174, 0.69);
+  font-size: 14.7px;
+  letter-spacing: .33px;
+  font-family: 'Times New Roman', serif;
+  text-shadow: 3px 2px #21011e;
+  opacity: 0.22;
+  left: 222px;
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darkmagenta;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:active {
+  color: darkmagenta;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 video {
-  padding: 0;
-  border-radius: 4px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  background-color: rgba(22, 22, 22, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-width: 0.42vw;
-  border-style: ridge;
+  background-color: rgba(0, 0, 0, .9);
+  margin-top: -1px;
+  border-width: 0.42vw 0.42vw 0.42vw 0.42vw;
+  box-shadow: 0 0 40px -10px rgba(0,0,0,.3),
+  0 0 25px -15px rgba(0,0,0,.2);
+  padding: 0px;
+  border-radius: 4px 4px 4px 4px;
   border-color: rgba(61, 20, 48, .69);
+  border-style: ridge;
+  opacity: 1;
+  border: 0 4px -15px rgba(0,0,0,.3);
+  box-shadow: 0 0 40px -10px rgba(0,0,0,.3),
+  inset 0 0 25 -15px rgba(61, 20, 48, .69);
 }
 
-a:link, a:visited { 
-  color: white; 
-  text-decoration: none; 
-  transition: color 0.3s ease; 
+#footer {
+  position: absolute;
+  bottom: 0px;
+  width: 120%;
+  height: 40px;
+  left: 2px;
 }
 
-a:hover, a:active { 
-  color: #c364c3; 
+#header {
+  position: fixed;
+  top: -2px;
+  bottom: 0px;
+  width: 120%;
+  left: 2px;
 }
 
-#objective-text {
-  display: block;
-  text-align: center;
-  font-family: 'Times New Roman', serif;
-  text-shadow: 2px 2px #120110;
-  color: #555;
-  opacity: 0;
-  background-color: transparent;
-  border: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  margin-top: 35px;
+#main {
+  position: fixed;
+  top: 45.5%;
+  left: 50.7%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
 }
 
-#header, #footer { 
-  position: fixed; 
-  width: 120%; 
-  left: 0; 
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-#header { 
-  top: -2px; 
-}
-
-#footer { 
-  bottom: 0; 
-}
-
-/* --- ANIMATION ORCHESTRATION --- */
-
-#background-overlay {
-  animation: background-fade-reveal 7s ease-in 4.1s forwards;
-}
+/* --- ANIMATION STYLES --- */
 
 #word-you, #word-just, #word-lost {
   opacity: 0;
@@ -239,14 +249,15 @@ a:hover, a:active {
     title-glow-pulse 11s ease-in-out 7.4s infinite;
 }
 
-#rules-container { 
-  opacity: 0; 
-  animation: full-fade-in 1s ease-in 4.8s forwards; 
+p {
+  opacity: 0;
+  animation: full-fade-in 1s ease-in 4.8s forwards;
 }
 
-.rule { 
-  opacity: 0; 
-  animation: cascade-unfold 1.0s ease-out forwards; 
+.rule {
+  display: block;
+  opacity: 0;
+  animation: cascade-unfold 1.0s ease-out forwards;
 }
 
 #rule-1 { 
@@ -261,203 +272,149 @@ a:hover, a:active {
   animation-delay: 6.8s; 
 }
 
-#video-container { 
-  position: relative; 
-  width: 670px; 
-  height: 377px; 
-  margin: 0 auto; 
+video {
+  opacity: 0;
+  animation: full-fade-in 1s ease-in 8.0s forwards, aura-pulse 10.5s ease-in-out 9.5s infinite;
 }
 
-#video-container video { 
-  position: relative; 
-  z-index: 2; 
-  width: 100%; 
-  height: 100%; 
-  opacity: 0; 
-  box-shadow: -1px 1px 13px 1px rgba(108, 20, 120, 0.35), inset 0 0 10px 7px rgba(40, 10, 30, 0.7);
-  animation: full-fade-in 1s ease-in 8.0s forwards, aura-pulse 10.5s ease-in-out 9.5s infinite; 
+#header, #footer {
+  opacity: 0;
+  animation: full-fade-in 1s ease-in 8.0s forwards;
 }
 
-#header, #footer { 
-  opacity: 0; 
-  animation: full-fade-in 1s ease-in 8.0s forwards; 
+p2 {
+  opacity: 0;
+  animation: objective-fade-in 2.5s ease-in 9.5s forwards;
 }
 
-#objective-text { 
-  animation: objective-fade-in 2.5s ease-in 9.5s forwards; 
-}
-
-/* --- RESPONSIVENESS & ACCESSIBILITY --- */
-
-@media screen and (max-width: 768px) {
-  #main { 
-    white-space: normal; 
-    width: 90%; 
-    left: 50%; 
-  }
-  
-  #background-overlay {
-    background-position: center center; 
-  }
-  
-  h1 { 
-    font-size: 48px;
-    line-height: 1.1;
-    margin-bottom: 30px;
-  }
-  
-  #rules-container { 
-    width: 90%; 
-    font-size: 14px; 
-    white-space: normal;
-    padding: 15px 20px;
-    line-height: 1.6;
-    letter-spacing: 0.5px;
-  }
-  
-  #video-container { 
-    width: 90%; 
-    height: auto; 
-  }
-  
-  video { 
-    width: 100%; 
-    height: auto; 
-    border-width: 2.5vw; 
-  }
-}
+/* --- MOBILE RESPONSIVE (matching index.html) --- */
 
 @media screen and (max-width: 430px) {
-  h1 {
-    font-size: 36px;
-    line-height: 1.2;
-  }
-  
-  #rules-container {
+  p {
     font-size: 13px;
-    padding: 12px 15px;
+    white-space: normal;
+    padding: 2vw 4vw;
     line-height: 1.6;
     letter-spacing: 0.5px;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  * { 
-    animation: none !important; 
-    transition: none !important; 
-  }
-  
-  #background-overlay { 
-    opacity: 1; 
-  }
-  
-  #word-you, #word-just, #word-lost, #title-part-2, #rules-container, .rule, #video-container video, #header, #footer, #objective-text { 
-    opacity: 1; 
-  }
-  
-  #objective-text { 
-    opacity: 0.125; 
-  }
-  
-  #title-part-2 { 
-    text-shadow: 4px 4px 4px #000, 0 0 7px #a11d1d, 0 0 10px #a11d1d; 
-  }
-  
-  #video-container video { 
-    box-shadow: -1px 1px 19px 3px rgba(108, 20, 120, 0.4), inset 0 0 13px 8px rgba(40, 10, 30, 0.7); 
-  }
-}
-
-#bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
   </style>
-
 </head>
 <body>
-  <svg style="position:absolute;width:0;height:0;">
-    <filter id="title-glow" x="-75%" y="-75%" width="250%" height="250%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
-      <feColorMatrix in="blur" type="matrix"
-        values="1 0 0 0 0
-                0 0 0 0 0
-                0 0 0 0 0
-                0 0 0 0.8" result="col"/>
-      <feMerge>
-        <feMergeNode in="col"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </svg>
-
-  <div id="background-overlay"></div>
-
   <center>
-    <div id="header">
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  <div id="header">
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+    "symbols": [
       {
-        "symbols": [
-          { "description": "GameStop", "proName": "NYSE:GME" },
-          { "description": "S&P 500", "proName": "AMEX:SPY" },
-          { "description": "US Volatility Index", "proName": "PEPPERSTONE:VIX" },
-          { "description": "Bitcoin", "proName": "COINBASE:BTCUSD" },
-          { "description": "Ethereum", "proName": "COINBASE:ETHUSD" },
-          { "description": "Loopring", "proName": "COINBASE:LRCUSD" },
-          { "description": "Immutable", "proName": "COINBASE:IMXUSD" }
-        ],
-        "showSymbolLogo": true, "isTransparent": true,
-        "displayMode": "regular", "colorTheme": "dark", "locale": "en"
-      }
-      </script>
-    </div>
-
-    <div id="main">
-      <br>
-      <h1 id="the-title">
-        <span id="word-you">You </span> 
-        <span id="word-just">Just </span>
-        <span id="word-lost">Lost </span>
-        <span id="title-part-2">The Game!</span>
-      </h1>
-
-      <p id="rules-container">
-        <span class="rule" id="rule-1"><b>RULE 1</b>: <a href="https://www.reddit.com/r/Superstonk/comments/1beyh96/x_marks_the_spot_gamestop_playr_x_xbox_game_pass/" target="_blank">You are playing The Game.</a></span><br>
-        <span class="rule" id="rule-2"><b>RULE 2</b>: <a href="https://www.reddit.com/r/Superstonk/comments/148sqku/why_gamestop_is_primed_to_become_the_amazon_x/" target="_blank">Whenever you think about The Game, you lose.</a></span><br>
-        <span class="rule" id="rule-3"><b>RULE 3</b>: <a href="https://www.reddit.com/r/loopringorg/comments/1i3ptr6/gamestop_x_psacard_could_singlehandedly_warrant/" target="_blank">Loss must be announced.</a></span>
-      </p>
-
-      <div id="video-container">
-        <video width="670" height="377" poster="findme.png" controls autoplay muted loop playsinline disablepictureinpicture src="comedy.mp4"></video>
-      </div>
-
-      <p id="objective-text">
-        <i><a href="https://www.drsgme.org/" rel="noopener">The objective of The Game is to forget that it exists.</a></i>
-      </p>
-    </div>
-
-    <div id="footer">
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        "description": "GameStop",
+        "proName": "NYSE:GME"
+      },
       {
-        "symbols": [
-          { "description": "Bitcoin", "proName": "COINBASE:BTCUSD" },
-          { "description": "Ethereum", "proName": "COINBASE:ETHUSD" },
-          { "description": "Loopring", "proName": "COINBASE:LRCUSD" },
-          { "description": "Immutable", "proName": "COINBASE:IMXUSD" },
-          { "description": "GameStop", "proName": "NYSE:GME" },
-          { "description": "S&P 500", "proName": "AMEX:SPY" },
-          { "description": "US Volatility Index", "proName": "PEPPERSTONE:VIX" }
-        ],
-        "showSymbolLogo": true, "isTransparent": true,
-        "displayMode": "regular", "colorTheme": "dark", "locale": "en"
+        "description": "S&P 500",
+        "proName": "AMEX:SPY"
+      },
+      {
+        "description": "US Volatility Index",
+        "proName": "PEPPERSTONE:VIX"
+      },
+      {
+        "description": "Bitcoin",
+        "proName": "COINBASE:BTCUSD"
+      },
+      {
+        "description": "Ethereum",
+        "proName": "COINBASE:ETHUSD"
+      },
+      {
+        "description": "Loopring",
+        "proName": "COINBASE:LRCUSD"
+      },
+      {
+        "description": "Immutable",
+        "proName": "COINBASE:IMXUSD"
       }
-      </script>
-    </div>
-  </center>
+        ],
+        "showSymbolLogo": true,
+        "isTransparent": true,
+        "displayMode": "regular",
+        "colorTheme": "dark",
+        "locale": "en"
+      }
+    </script>
+  </div>
+
+  <div id="main">
+    <br><h1>
+      <span id="word-you">You </span>
+      <span id="word-just">Just </span>
+      <span id="word-lost">Lost </span>
+      <span id="title-part-2">The Game!</span>
+    </h1>
+    
+    <p>
+      <span class="rule" id="rule-1"><b><span style="color:white; font-family:Verdana,arial, sans-serif">RULE 1</span></b>: <a href="https://www.reddit.com/r/Superstonk/comments/1beyh96/x_marks_the_spot_gamestop_playr_x_xbox_game_pass/" target="_blank">You are playing The Game.</a></span><br />
+      <span class="rule" id="rule-2"><b><span style="color:white; font-family:Verdana,arial, sans-serif">RULE 2</span></b>: <a href="https://www.reddit.com/r/Superstonk/comments/148sqku/why_gamestop_is_primed_to_become_the_amazon_x/" target="_blank">Whenever you think about The Game, you lose.</a></span><br />
+      <span class="rule" id="rule-3"><b><span style="color:white; font-family:Verdana,arial, sans-serif">RULE 3</span></b>: <a href="https://www.reddit.com/r/loopringorg/comments/1i3ptr6/gamestop_x_psacard_could_singlehandedly_warrant/" target="_blank">Loss must be announced.</a></span><br />
+    </p>
+    
+    <br>
+    
+    <video width="670" height="377" poster="findme.png" controls autoplay muted loop playsinline disablepictureinpicture src="comedy.mp4"></video>
+    
+    <br>
+    
+    <p2>
+      <i><a href="https://www.drsgme.org/" rel="noopener">The objective of The Game is to forget that it exists.</a></i>
+    </p2>
+    
+  </div>
+
+  <br><br><br>
+  
+  <div id="footer">
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+    "symbols": [
+    {
+      "description": "Bitcoin",
+      "proName": "COINBASE:BTCUSD"
+    },
+    {
+      "description": "Ethereum",
+      "proName": "COINBASE:ETHUSD"
+    },
+    {
+      "description": "Loopring",
+      "proName": "COINBASE:LRCUSD"
+    },
+    {
+      "description": "Immutable",
+      "proName": "COINBASE:IMXUSD"
+    },
+    {
+      "description": "GameStop",
+      "proName": "NYSE:GME"
+    },
+    {
+      "description": "S&P 500",
+      "proName": "AMEX:SPY"
+    },
+    {
+      "description": "US Volatility Index",
+      "proName": "PEPPERSTONE:VIX"
+    }
+    ],
+      "showSymbolLogo": true,
+      "isTransparent": true,
+      "displayMode": "regular",
+      "colorTheme": "dark",
+       "locale": "en"
+    }
+    </script>
+  </div>
+  
+</center>
 
   <canvas id="bg"></canvas>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js"></script>
@@ -528,7 +485,7 @@ a:hover, a:active {
       renderer.setSize(innerWidth, innerHeight);
     });
   </script>
-  
+
   <script>
     window.addEventListener('DOMContentLoaded', function() {
       var titles = ['Power to the Collectors 🏴‍☠️', 'Power to the Creators 🏴‍☠️', 'Power to the Players 🏴‍☠️'];
