@@ -101,18 +101,19 @@
     padding: 0;
   }
   
-  #background-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    background-image: url('741.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-blend-mode: lighten;
-    background-position: 16% 99%; 
-    opacity: 0;
-  }
+#background-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url('741.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-blend-mode: lighten;
+  background-position: 16% 99%; 
+  opacity: 0;
+  animation: background-fade-reveal 7s ease-in 4.1s forwards;
+}
 
   html, body {
     width: 100%;
