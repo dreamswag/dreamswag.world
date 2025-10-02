@@ -85,20 +85,21 @@
     to { opacity: 0.22; }
   }
   
-  /* --- BASE STYLING FROM INDEX.HTML --- */
+  /* --- BASE STYLING --- */
   
   html {
     background-color: #09060a;
   }
   
-  body
-  {
+  body {
     font-family: Verdana, arial, sans-serif;
     color: white;
     max-width: 100%;
     overflow-x: hidden;
     overflow: hidden;
     background-color: #000;
+    margin: 0;
+    padding: 0;
   }
   
   #background-overlay {
@@ -110,12 +111,11 @@
     background-attachment: fixed;
     background-size: cover;
     background-blend-mode: lighten;
-    background-position: center 30%; 
+    background-position: center 70%; 
     opacity: 0;
   }
 
-  html,body
-  {
+  html, body {
     width: 100%;
     height: 100%;
     overflow: hidden !important;
@@ -125,26 +125,15 @@
     padding: 0;
   }
   
-  h1
-  {
+  h1 {
     font-size: 74.1px;
     text-align: center;
     font-family: "Trebuchet MS", sans-serif;
     text-shadow: 4px 4px #000000;
     line-height: .69;
-    
   }
-  h2
-  {
-    font-size: 44px;
-    text-align: center;
-    font-family: "Trebuchet MS", sans-serif;
-    text-shadow: 3px 3px #000000;
-    line-height: .69;
-    
-  }
-  p
-  {	
+  
+  p {	
     background-color: rgba(22, 22, 22, 0.69);
     border-width: 5px 5px 5px 6px;
     padding: .42vw;
@@ -158,8 +147,8 @@
     text-shadow: 2px 2px #140101;
     white-space: nowrap;
   }
-  p2
-  {	
+  
+  p2 {	
     line-height:33px;
     color: rgba(174,174,174, 0.69);
     font-size: 14.7px;
@@ -169,70 +158,44 @@
     opacity: 0.22;
     left: 222px;
   }
-  a:link 
-  {
+  
+  a:link, a:visited {
     color: white;
     background-color: transparent;
     text-decoration: none;
   }
-  a:visited 
-  {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  a:hover 
-  {
+  
+  a:hover, a:active {
     color: darkmagenta;
     background-color: transparent;
     text-decoration: none;
     font-weight: bold;
   }
-  a:active 
-  {
-    color: darkmagenta;
-    background-color: transparent;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  video
-  {
+  
+  video {
     background-color: rgba(0, 0, 0, .9);
     margin-top: -1px;
     border-width: 0.42vw 0.42vw 0.42vw 0.42vw;
-    box-shadow:0 0 40px -10px rgba(0,0,0,.3),
-    0 0 25px -15px rgba(0,0,0,.2);
     padding: 0px;
-    border-radius: 4px 4px 4px 4px;
+    border-radius: 4px;
     border-color: rgba(61, 20, 48, .69);
     border-style: ridge;
     opacity:1;
-    border: 0 4px -15px rgba(0,0,0,.3);
-    box-shadow: 0 0 40px -10px rgba(0,0,0,.3),
-    inset 0 0 25 -15px rgba(61, 20, 48, .69);
+    box-shadow: 0 0 40px -10px rgba(0,0,0,.3), inset 0 0 25px -15px rgba(61, 20, 48, .69);
   }
   
-  
-  
-  #footer	{
+  #footer, #header {
     position:absolute;
-    bottom:0px;
-    width:120%;
-    height:40px;
-    left: 2px;
-  }
-  #header	{
-    position:fixed;
-    top:-2px;
-    bottom:0px;
     width:120%;
     left: 2px;
   }
+  #header { top:-2px; }
+  #footer { bottom:0px; height:40px; }
+
   #main{
     position: fixed;
     top: 45.5%;
     left: 50.7%;
-    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     white-space: nowrap;
   }
@@ -251,21 +214,13 @@
   #background-overlay {
     animation: background-fade-reveal 7s ease-in 4.1s forwards;
   }
-
-  #word-you {
+  
+  #word-you, #word-just, #word-lost {
     opacity: 0;
     animation: cascade-fade-in 1s ease-in forwards;
   }
-  
-  #word-just {
-    opacity: 0;
-    animation: cascade-fade-in 1s ease-in 2s forwards;
-  }
-  
-  #word-lost {
-    opacity: 0;
-    animation: cascade-fade-in 1s ease-in 2.6s forwards;
-  }
+  #word-just { animation-delay: 2s; }
+  #word-lost { animation-delay: 2.6s; }
   
   #title-part-2 {
     display: inline-block;
@@ -284,24 +239,15 @@
   .rule {
     opacity: 0;
     animation: cascade-unfold 1.0s ease-out forwards;
-    font-size: 0.85em;
   }
   
   .rule b {
     color: #b0b0b0;
   }
   
-  #rule-1 { 
-    animation-delay: 5.8s; 
-  }
-  
-  #rule-2 { 
-    animation-delay: 6.3s; 
-  }
-  
-  #rule-3 { 
-    animation-delay: 6.8s; 
-  }
+  #rule-1 { animation-delay: 5.8s; }
+  #rule-2 { animation-delay: 6.3s; }
+  #rule-3 { animation-delay: 6.8s; }
   
   video {
     opacity: 0;
@@ -337,41 +283,17 @@
     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
     {
     "symbols": [
-      {
-        "description": "GameStop",
-        "proName": "NYSE:GME"
-      },
-      {
-        "description": "S&P 500",
-        "proName": "AMEX:SPY"
-      },
-      {
-        "description": "US Volatility Index",
-        "proName": "PEPPERSTONE:VIX"
-      },
-      {
-        "description": "Bitcoin",
-        "proName": "COINBASE:BTCUSD"
-      },
-      {
-        "description": "Ethereum",
-        "proName": "COINBASE:ETHUSD"
-      },
-      {
-        "description": "Loopring",
-        "proName": "COINBASE:LRCUSD"
-      },
-      {
-        "description": "Immutable",
-        "proName": "COINBASE:IMXUSD"
-      }
-        ],
-        "showSymbolLogo": true,
-        "isTransparent": true,
-        "displayMode": "regular",
-        "colorTheme": "dark",
-        "locale": "en"
-      }
+      { "description": "GameStop", "proName": "NYSE:GME" },
+      { "description": "S&P 500", "proName": "AMEX:SPY" },
+      { "description": "US Volatility Index", "proName": "PEPPERSTONE:VIX" },
+      { "description": "Bitcoin", "proName": "COINBASE:BTCUSD" },
+      { "description": "Ethereum", "proName": "COINBASE:ETHUSD" },
+      { "description": "Loopring", "proName": "COINBASE:LRCUSD" },
+      { "description": "Immutable", "proName": "COINBASE:IMXUSD" }
+    ],
+    "showSymbolLogo": true, "isTransparent": true,
+    "displayMode": "regular", "colorTheme": "dark", "locale": "en"
+    }
     </script>
   </div>
 
@@ -407,40 +329,16 @@
     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
     {
     "symbols": [
-    {
-      "description": "Bitcoin",
-      "proName": "COINBASE:BTCUSD"
-    },
-    {
-      "description": "Ethereum",
-      "proName": "COINBASE:ETHUSD"
-    },
-    {
-      "description": "Loopring",
-      "proName": "COINBASE:LRCUSD"
-    },
-    {
-      "description": "Immutable",
-      "proName": "COINBASE:IMXUSD"
-    },
-    {
-      "description": "GameStop",
-      "proName": "NYSE:GME"
-    },
-    {
-      "description": "S&P 500",
-      "proName": "AMEX:SPY"
-    },
-    {
-      "description": "US Volatility Index",
-      "proName": "PEPPERSTONE:VIX"
-    }
+      { "description": "Bitcoin", "proName": "COINBASE:BTCUSD" },
+      { "description": "Ethereum", "proName": "COINBASE:ETHUSD" },
+      { "description": "Loopring", "proName": "COINBASE:LRCUSD" },
+      { "description": "Immutable", "proName": "COINBASE:IMXUSD" },
+      { "description": "GameStop", "proName": "NYSE:GME" },
+      { "description": "S&P 500", "proName": "AMEX:SPY" },
+      { "description": "US Volatility Index", "proName": "PEPPERSTONE:VIX" }
     ],
-      "showSymbolLogo": true,
-      "isTransparent": true,
-      "displayMode": "regular",
-      "colorTheme": "dark",
-       "locale": "en"
+    "showSymbolLogo": true, "isTransparent": true,
+    "displayMode": "regular", "colorTheme": "dark", "locale": "en"
     }
     </script>
   </div>
