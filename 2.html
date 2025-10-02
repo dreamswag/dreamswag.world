@@ -98,15 +98,22 @@
     max-width: 100%;
     overflow-x: hidden;
     overflow: hidden;
+    background-color: #000;
+  }
+  
+  #background-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
     background-image: url('741.png');
     background-repeat: no-repeat;
-    background-position: 16% 99%;
-    background-attachment: fixed; 
+    background-attachment: fixed;
     background-size: cover;
     background-blend-mode: lighten;
+    background-position: center 30%; 
     opacity: 0;
-    animation: background-fade-reveal 7s ease-in 4.1s forwards;
   }
+
   html,body
   {
     width: 100%;
@@ -241,6 +248,10 @@
   
   /* --- ANIMATION APPLICATION --- */
   
+  #background-overlay {
+    animation: background-fade-reveal 7s ease-in 4.1s forwards;
+  }
+
   #word-you {
     opacity: 0;
     animation: cascade-fade-in 1s ease-in forwards;
@@ -270,9 +281,10 @@
     animation: full-fade-in 1s ease-in 4.8s forwards;
   }
   
-.rule {
+  .rule {
     opacity: 0;
     animation: cascade-unfold 1.0s ease-out forwards;
+    font-size: 0.85em;
   }
   
   .rule b {
@@ -306,9 +318,9 @@
     animation: objective-fade-in 2.5s ease-in 9.5s forwards;
   }
   
-@media screen and (max-width: 430px) {
+  @media screen and (max-width: 430px) {
     p {
-      font-size: 11px;
+      font-size: 13px;
       white-space: normal;
       padding: 2vw 4vw;
       line-height: 1.6;
@@ -319,6 +331,7 @@
   </style>
 </head>
 <body>
+  <div id="background-overlay"></div>
   <center>
   <div id="header">
     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
